@@ -1,0 +1,73 @@
+Task III 제출서
+
+[프로젝트 기본 정보]
+
+프로젝트명: 갑상선 영양제 의사결정 지원 시스템 (Thyroid Supplement CDSS)
+
+개인/팀 여부: 개인
+
+팀원 명단: 해당 없음
+
+선택한 주제 유형: AI Agent를 활용한 서비스 (＋ 공공데이터 + AI 활용 서비스)
+
+프로젝트 한 줄 소개:
+갑상선 질환자의 영양제 안전성·근거를 결정론적 규칙 엔진으로 판정하고, LLM은 판정 이후 자연어 설명 생성만 담당하는 임상 의사결정 지원 서비스.
+
+프로젝트 상세 설명:
+갑상선기능저하증·항진증·하시모토·그레이브스 등 환자가 영양제(요오드·셀레늄·철·비타민D·아연·마그네슘·프로바이오틱스 등)를 복용할 때의 안전성과 임상 근거를 판정한다. 핵심 설계 원칙은 "LLM은 임상 판정을 내리지 않는다"이다. 안전성 검사(24 카테고리·34 규칙)와 6-class 판정(권고/조건부/회피/금기/근거부족)은 검증된 규칙·근거 테이블에 의해 결정론적으로 산출되어 결과가 재현·추적 가능하다. LLM(GPT-4o-mini)은 판정이 끝난 뒤 환자/의사 대상 자연어 설명 생성에만 쓰인다. 의사용 경로는 실시간 PubMed 문헌 근거를 검색·요약해 제시하고, 식약처(MFDS) 상한섭취량·주의사항 공공데이터를 안전성 판단에 반영하며, 모든 판정은 감사 로그(JSONL)로 기록된다.
+
+
+[필수 구성 요소]
+
+Front-End 구성 및 링크:
+정적 웹(HTML/CSS/JS) — 배포 URL의 "/" 경로 (frontend/). 환자/의사 상담 UI, 예시 시나리오, 로그인 제공.
+링크: https://thyroid-supplement-cdss.onrender.com
+
+Back-End 구성 및 링크:
+FastAPI(Python 3.12) — app/. 주요 API: POST /api/v1/patient/thyroid-chat, POST /api/v1/doctor/thyroid-consult, POST /api/auth/login.
+Swagger 문서: https://thyroid-supplement-cdss.onrender.com/docs
+
+Database 구성 설명:
+SQLite 사용. ① 인증/사용자 프로필(domain/auth/patients.db, 서버 기동 시 계정 자동 시드), ② 식약처 원료 캐시(domain/mfds/db.py, 미존재 시 빈 DB 자동 생성 + 내장 fallback 테이블). 판정 감사 로그는 JSONL(data/audit/).
+
+배포 URL:
+https://thyroid-supplement-cdss.onrender.com
+(무료 티어 — 유휴 시 슬립, 첫 접속 시 약 30~60초 콜드스타트 후 정상 동작)
+
+CI/CD 구성 설명:
+CI = GitHub Actions(.github/workflows/ci.yml) — push/PR마다 규칙 로직 테스트(pytest 91건) + 앱 부팅·라우트 노출 스모크 테스트 실행.
+CD = Render Web Service(Docker, render.yaml / autoDeploy: true) — main 브랜치 push 시 Docker 이미지 자동 빌드·재배포.
+
+GitHub Repository 링크:
+https://github.com/tunho/thyroid-supplement-cdss
+
+
+[기술 및 구현 내용]
+
+사용 기술 스택:
+Python 3.12, FastAPI, Pydantic, SQLite, OpenAI GPT-4o-mini, PubMed E-utilities, 식약처(MFDS) API, JWT 인증, Docker, Render, GitHub Actions
+
+주요 기능:
+1. 환자용 상담(부드러운 톤의 정보 제공 + 상담 유도)
+2. 의사용 자문(실시간 PubMed 근거 + 구조화 판정)
+3. 안전성 엔진(24 카테고리·34 규칙, CRITICAL 조기 차단)
+4. 6-class 결정론적 판정 + 감사 로그
+5. 환자/의사 동일 결과의 청중별 출력 분리
+
+AI Agent 또는 AI 활용 방식:
+임상 판정은 결정론적 규칙 엔진이 수행(LLM 미개입). LLM(GPT-4o-mini)은 ① 판정 결과의 자연어 설명/요약, ② 의사용 PubMed 근거 reranking 보조에 사용. "신뢰성·재현성"을 차별점으로 삼는 hybrid 구조.
+
+공공데이터 활용 내용:
+식약처(MFDS) 건강기능식품 상한섭취량·개별인정형 원료 주의사항을 안전성 판단에 반영. PubMed(NIH) 문헌을 실시간 검색·근거 요약.
+
+본인 또는 팀원별 역할 분담:
+개인 프로젝트 — 기획·백엔드·프론트엔드·배포/CI 전체 단독 수행.
+
+실행 방법 또는 확인 방법:
+- 배포본: 배포 URL 접속 → 환자/의사 탭 로그인(공통 비밀번호 demo1234) → 상담 입력
+- 로컬: docker build -t thyroid-cdss .  &&  docker run -p 8000:8000 -e OPENAI_API_KEY=sk-... thyroid-cdss  →  http://localhost:8000
+- 헬스체크: https://thyroid-supplement-cdss.onrender.com/health
+- 테스트: PYTHONPATH=. pytest tests/test_thyroid_decision.py tests/test_thyroid_safety.py -v
+
+
+(비고) 배포본은 갑상선 의사결정 코어 + 프론트엔드로 구성된 슬림 버전이다. 일반 영양제 카탈로그 RAG 검색(대용량 인덱스 필요)은 제외되어 있으나, 평가 핵심인 임상 판정 기능은 모두 동작한다. 본 서비스는 의사결정 지원 목적으로, 의학적 진단·처방을 대체하지 않는다.
