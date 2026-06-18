@@ -29,8 +29,19 @@ jobs:
         run: |
           pytest tests/test_thyroid_decision.py tests/test_thyroid_safety.py -v
 
-      - name: Smoke test — app imports & exposes routes
+      - name: Smoke test — app boots & exposes routes
         env:
           PYTHONPATH: .
         run: |
-          python -c "import app.main; paths=[r.path for r in app.main.app.routes if hasattr(r,'path')]; assert '/health' in paths; assert '/api/v1/patient/thyroid-chat' in paths; print('OK', len(paths), 'routes')"
+          python - <<'PY'
+          from fastapi.testclient import TestClient
+          from app.main import app
+
+          client = TestClient(app)
+          assert client.get("/health").status_code == 200, "/health not OK"
+
+          paths = client.get("/openapi.json").json()["paths"]
+          for required in ("/api/v1/patient/thyroid-chat", "/api/v1/doctor/thyroid-consult", "/api/auth/login"):
+              assert required in paths, f"missing route: {required}"
+          print("OK — health +", len(paths), "API paths exposed")
+          PY
