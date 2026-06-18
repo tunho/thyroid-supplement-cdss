@@ -1,0 +1,898 @@
+[
+  {
+    "id": "evidence-omega3-001",
+    "supplement": "오메가3",
+    "ingredient_aliases": [
+      "EPA",
+      "DHA",
+      "fish oil"
+    ],
+    "clinical_question": "고중성지방혈증 환자에서 고용량 오메가3가 도움이 되는가?",
+    "population": "고중성지방혈증 성인",
+    "conditions": [
+      "고중성지방혈증",
+      "고지혈증"
+    ],
+    "medications": [
+      "스타틴"
+    ],
+    "interaction_risk": "moderate",
+    "interaction_summary": "항응고제 또는 항혈소판제와 병용 시 출혈 위험 증가 가능성 고려.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "triglyceride_change",
+      "value": -20,
+      "unit": "%",
+      "comparison": "baseline"
+    },
+    "dosage_range": {
+      "min": 2,
+      "max": 4,
+      "unit": "g/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "고용량 주의",
+      "출혈 위험 확인"
+    ],
+    "summary": "중성지방 감소 근거는 비교적 있으나 심혈관 사건 감소는 제형과 대상군에 따라 다름.",
+    "counseling_points": [
+      "제형 확인",
+      "항응고제 병용 여부 확인",
+      "목표는 중성지방 감소인지 명확화"
+    ],
+    "uncertainty_notes": [
+      "일반 시판 제품과 처방 제형 근거를 구분해야 함"
+    ],
+    "source_title": "REDUCE-IT and related reviews",
+    "source_type": "review",
+    "citation": "Bhatt DL et al. N Engl J Med. 2019.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-coq10-001",
+    "supplement": "CoQ10",
+    "ingredient_aliases": [
+      "코엔자임Q10",
+      "ubiquinone"
+    ],
+    "clinical_question": "스타틴 복용 환자에서 CoQ10이 근육통 완화에 도움이 되는가?",
+    "population": "스타틴 복용 성인",
+    "conditions": [
+      "고지혈증"
+    ],
+    "medications": [
+      "스타틴"
+    ],
+    "interaction_risk": "low",
+    "interaction_summary": "중대한 상호작용은 드물지만 기대 효과는 제한적일 수 있음.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "myalgia_improvement",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "possible benefit"
+    },
+    "dosage_range": {
+      "min": 100,
+      "max": 300,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "기대치 조절 필요"
+    ],
+    "summary": "일부 연구에서 근육통 개선 가능성이 보고되나 일관된 결론은 부족.",
+    "counseling_points": [
+      "심혈관 예방 효과와 근육통 완화 근거를 구분",
+      "효과 없으면 중단 기준 정하기"
+    ],
+    "uncertainty_notes": [
+      "연구 규모가 작고 결과가 일관되지 않음"
+    ],
+    "source_title": "CoQ10 for statin-associated muscle symptoms",
+    "source_type": "review",
+    "citation": "Systematic review, mixed-quality trials.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-chromium-001",
+    "supplement": "크롬",
+    "ingredient_aliases": [
+      "chromium picolinate"
+    ],
+    "clinical_question": "당뇨 환자에서 크롬이 혈당 조절에 도움이 되는가?",
+    "population": "제2형 당뇨병 성인",
+    "conditions": [
+      "당뇨"
+    ],
+    "medications": [
+      "메트포르민"
+    ],
+    "interaction_risk": "unknown",
+    "interaction_summary": "메트포르민과 중대한 상호작용은 뚜렷하지 않지만 고용량 장기 안전성은 제한적.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "hba1c_change",
+      "value": -0.3,
+      "unit": "%",
+      "comparison": "vs placebo"
+    },
+    "dosage_range": {
+      "min": 200,
+      "max": 1000,
+      "unit": "mcg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "고용량 장기 복용 데이터 부족"
+    ],
+    "summary": "일부 RCT에서 HbA1c 소폭 감소 가능성이 있으나 효과 크기는 제한적.",
+    "counseling_points": [
+      "생활습관 개선 대비 효과 크기 설명",
+      "즉시 약 대체용으로 설명하지 않기"
+    ],
+    "uncertainty_notes": [
+      "장기 연구 부족"
+    ],
+    "source_title": "Chromium supplementation in type 2 diabetes",
+    "source_type": "meta_analysis",
+    "citation": "Meta-analysis of small RCTs.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-magnesium-001",
+    "supplement": "마그네슘",
+    "ingredient_aliases": [
+      "magnesium"
+    ],
+    "clinical_question": "신질환 환자에서 마그네슘 보충이 안전한가?",
+    "population": "만성 신질환 성인",
+    "conditions": [
+      "만성 신질환"
+    ],
+    "medications": [],
+    "interaction_risk": "moderate",
+    "interaction_summary": "신기능 저하 환자에서는 축적 위험 때문에 보충 전 용량과 적응증 확인이 필요.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "symptom_relief",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "possible benefit"
+    },
+    "dosage_range": {
+      "min": 200,
+      "max": 350,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "신기능 저하 시 축적 위험",
+      "설사 등 위장관 부작용"
+    ],
+    "summary": "일반 성인에서는 비교적 안전하지만 CKD에서는 보수적으로 접근해야 함.",
+    "counseling_points": [
+      "eGFR 확인",
+      "완하제/제산제 중복 확인"
+    ],
+    "uncertainty_notes": [
+      "질환 중증도에 따른 데이터 제한"
+    ],
+    "source_title": "Magnesium use in CKD reviews",
+    "source_type": "review",
+    "citation": "Review articles on magnesium and CKD.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-vitamind-001",
+    "supplement": "비타민D",
+    "ingredient_aliases": [
+      "vitamin d",
+      "d3",
+      "콜레칼시페롤"
+    ],
+    "clinical_question": "고칼슘혈증 병력이 있는 환자에서 비타민D 보충은 안전한가?",
+    "population": "고칼슘혈증 병력 성인",
+    "conditions": [
+      "고칼슘혈증"
+    ],
+    "medications": [],
+    "interaction_risk": "high",
+    "interaction_summary": "고칼슘혈증 병력이 있으면 비타민D 추가 보충 전 혈중 칼슘과 25(OH)D 확인이 우선.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "vitamin_d_repletion",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "effective if deficient"
+    },
+    "dosage_range": {
+      "min": 800,
+      "max": 2000,
+      "unit": "IU/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "고칼슘혈증 재발 가능성",
+      "중복 복용 확인"
+    ],
+    "summary": "결핍 교정에는 도움이 되지만 고칼슘혈증 병력 환자에서는 검사 기반 접근이 필요.",
+    "counseling_points": [
+      "칼슘제/멀티비타민 중복 확인",
+      "검사 전 고용량 시작 피하기"
+    ],
+    "uncertainty_notes": [
+      "기저 원인에 따라 안전성 차이"
+    ],
+    "source_title": "Vitamin D safety guidance",
+    "source_type": "guideline",
+    "citation": "Guideline-style safety summaries.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-probiotic-001",
+    "supplement": "프로바이오틱스",
+    "ingredient_aliases": [
+      "유산균",
+      "probiotics"
+    ],
+    "clinical_question": "면역저하 환자에서 프로바이오틱스는 안전한가?",
+    "population": "면역저하 성인",
+    "conditions": [
+      "면역저하"
+    ],
+    "medications": [
+      "면역억제제"
+    ],
+    "interaction_risk": "moderate",
+    "interaction_summary": "대부분 안전하지만 중증 면역저하 상태에서는 균혈증 등 드문 합병증 가능성 고려.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "gi_symptom_relief",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "possible benefit"
+    },
+    "dosage_range": {
+      "min": 1,
+      "max": 10,
+      "unit": "billion CFU/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "중증 면역저하 시 보수적 접근"
+    ],
+    "summary": "일반인에서는 비교적 안전하지만 면역저하 환자에서는 개별 판단 필요.",
+    "counseling_points": [
+      "면역저하 정도 확인",
+      "발열/중심정맥관 여부 확인"
+    ],
+    "uncertainty_notes": [
+      "중증군 데이터가 제한적"
+    ],
+    "source_title": "Probiotics safety in immunocompromised hosts",
+    "source_type": "review",
+    "citation": "Review on rare invasive infections.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-selenium-001",
+    "supplement": "셀레늄",
+    "ingredient_aliases": [
+      "selenium"
+    ],
+    "clinical_question": "갑상선 질환 환자에서 셀레늄이 도움이 되는가?",
+    "population": "갑상선 질환 성인",
+    "conditions": [
+      "갑상선 질환"
+    ],
+    "medications": [],
+    "interaction_risk": "unknown",
+    "interaction_summary": "일반적 상호작용은 크지 않지만 장기 고용량 보충은 독성 위험이 있음.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "antibody_change",
+      "value": -1,
+      "unit": "qualitative",
+      "comparison": "possible reduction"
+    },
+    "dosage_range": {
+      "min": 100,
+      "max": 200,
+      "unit": "mcg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "장기 고용량 독성 주의"
+    ],
+    "summary": "특정 갑상선 질환에서 항체 감소 가능성이 보고되지만 임상적 이득은 불확실.",
+    "counseling_points": [
+      "요오드 상태와 구분해서 설명",
+      "장기 복용 전 중단 기준 정하기"
+    ],
+    "uncertainty_notes": [
+      "임상 증상 개선과 직접 연결은 약함"
+    ],
+    "source_title": "Selenium and thyroid disease reviews",
+    "source_type": "review",
+    "citation": "Review of autoimmune thyroiditis studies.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-lutein-001",
+    "supplement": "루테인",
+    "ingredient_aliases": [
+      "lutein",
+      "지아잔틴"
+    ],
+    "clinical_question": "눈 건강 관리를 위해 루테인이 도움이 되는가?",
+    "population": "중장년 성인",
+    "conditions": [
+      "눈 건강"
+    ],
+    "medications": [],
+    "interaction_risk": "none_known",
+    "interaction_summary": "중대한 약물 상호작용은 잘 알려져 있지 않음.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "macular_pigment_support",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "supportive"
+    },
+    "dosage_range": {
+      "min": 10,
+      "max": 20,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "효과 기대치 과도하게 설명하지 않기"
+    ],
+    "summary": "황반색소 유지와 관련된 보조적 근거가 있으나 즉각적인 시력 개선 효과로 설명하긴 어려움.",
+    "counseling_points": [
+      "생활습관과 병행 설명",
+      "증상 치료제처럼 설명하지 않기"
+    ],
+    "uncertainty_notes": [
+      "기저 안질환 유무에 따라 체감 차이 큼"
+    ],
+    "source_title": "AREDS-related eye nutrition reviews",
+    "source_type": "review",
+    "citation": "Eye nutrition review articles.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-melatonin-001",
+    "supplement": "멜라토닌",
+    "ingredient_aliases": [
+      "melatonin"
+    ],
+    "clinical_question": "수면 보조로 멜라토닌이 도움이 되는가?",
+    "population": "불면 증상 성인",
+    "conditions": [
+      "수면장애"
+    ],
+    "medications": [],
+    "interaction_risk": "moderate",
+    "interaction_summary": "진정제나 수면제와 병용 시 과도한 졸림 가능성을 확인해야 함.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "sleep_latency_change",
+      "value": -10,
+      "unit": "min",
+      "comparison": "vs placebo"
+    },
+    "dosage_range": {
+      "min": 1,
+      "max": 5,
+      "unit": "mg/day",
+      "schedule": "bedtime"
+    },
+    "safety_flags": [
+      "주간 졸림 가능성"
+    ],
+    "summary": "수면 잠들기까지 걸리는 시간을 소폭 줄일 수 있으나 효과 크기는 크지 않음.",
+    "counseling_points": [
+      "수면위생과 같이 설명",
+      "장기 복용보다 단기 사용 목적 확인"
+    ],
+    "uncertainty_notes": [
+      "제품 간 함량 편차 가능성"
+    ],
+    "source_title": "Melatonin for sleep onset",
+    "source_type": "meta_analysis",
+    "citation": "Meta-analysis of sleep onset studies.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-milkthistle-001",
+    "supplement": "밀크씨슬",
+    "ingredient_aliases": [
+      "실리마린",
+      "milk thistle"
+    ],
+    "clinical_question": "간 건강 보조로 밀크씨슬이 도움이 되는가?",
+    "population": "일반 성인 또는 지방간 관심군",
+    "conditions": [
+      "지방간"
+    ],
+    "medications": [],
+    "interaction_risk": "low",
+    "interaction_summary": "중대한 상호작용은 흔하지 않지만 약물대사효소 영향 가능성은 완전히 배제할 수 없음.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "liver_enzyme_change",
+      "value": -1,
+      "unit": "qualitative",
+      "comparison": "mixed"
+    },
+    "dosage_range": {
+      "min": 140,
+      "max": 420,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "효과 과장 광고 주의"
+    ],
+    "summary": "간 질환 없는 일반인에서 뚜렷한 이득 근거는 제한적.",
+    "counseling_points": [
+      "간수치 이상 원인 평가가 우선",
+      "건기식이 치료 대체가 아님을 설명"
+    ],
+    "uncertainty_notes": [
+      "제품 표준화 차이 큼"
+    ],
+    "source_title": "Milk thistle in liver disease reviews",
+    "source_type": "review",
+    "citation": "Mixed-evidence review articles.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-vitaminb-001",
+    "supplement": "비타민B",
+    "ingredient_aliases": [
+      "비타민B군",
+      "vitamin b complex"
+    ],
+    "clinical_question": "피로 개선 목적으로 비타민B 보충이 도움이 되는가?",
+    "population": "결핍 위험이 있는 성인",
+    "conditions": [
+      "피로"
+    ],
+    "medications": [],
+    "interaction_risk": "none_known",
+    "interaction_summary": "대부분 안전하지만 고용량 장기 복용은 일부 성분에서 부작용 가능.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "fatigue_improvement",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "benefit mainly if deficient"
+    },
+    "dosage_range": {
+      "min": 1,
+      "max": 1,
+      "unit": "tablet/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "결핍이 없으면 효과 제한적일 수 있음"
+    ],
+    "summary": "결핍이 있거나 식사 상태가 나쁜 경우에는 도움이 될 수 있으나 비특이적 피로에 대한 근거는 약함.",
+    "counseling_points": [
+      "결핍 가능성 평가",
+      "수면/스트레스 요인도 같이 점검"
+    ],
+    "uncertainty_notes": [
+      "피로 원인이 다양해 단독 효과 해석 어려움"
+    ],
+    "source_title": "Vitamin B and fatigue reviews",
+    "source_type": "review",
+    "citation": "Narrative review on fatigue supplements.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-zinc-001",
+    "supplement": "아연",
+    "ingredient_aliases": [
+      "zinc"
+    ],
+    "clinical_question": "면역 관리 목적으로 아연 보충이 도움이 되는가?",
+    "population": "결핍 위험 성인",
+    "conditions": [
+      "면역"
+    ],
+    "medications": [],
+    "interaction_risk": "low",
+    "interaction_summary": "퀴놀론계/테트라사이클린계 항생제와 시간차 복용 필요.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "cold_duration_change",
+      "value": -1,
+      "unit": "day",
+      "comparison": "possible reduction"
+    },
+    "dosage_range": {
+      "min": 8,
+      "max": 25,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "장기 고용량은 구리 결핍 위험"
+    ],
+    "summary": "결핍 교정에는 유익하지만 과량 장기 복용은 피해야 함.",
+    "counseling_points": [
+      "멀티비타민 중복 확인",
+      "항생제 병용 시 시간차 안내"
+    ],
+    "uncertainty_notes": [
+      "예방 효과는 일관되지 않음"
+    ],
+    "source_title": "Zinc and immune support",
+    "source_type": "meta_analysis",
+    "citation": "Meta-analysis of zinc and common cold.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-calcium-001",
+    "supplement": "칼슘",
+    "ingredient_aliases": [
+      "calcium"
+    ],
+    "clinical_question": "골다공증 위험 환자에서 칼슘 보충이 필요한가?",
+    "population": "골다공증 위험 성인",
+    "conditions": [
+      "골다공증"
+    ],
+    "medications": [
+      "칼슘제"
+    ],
+    "interaction_risk": "moderate",
+    "interaction_summary": "철분, 레보티록신, 일부 항생제와 시간차 복용이 필요할 수 있음.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "bone_health_support",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "supportive if intake low"
+    },
+    "dosage_range": {
+      "min": 500,
+      "max": 1200,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "신결석 병력 확인",
+      "과다 복용 시 변비 가능"
+    ],
+    "summary": "식이 섭취가 부족한 경우 보조적 이득이 있을 수 있으나 무조건 고용량을 권하긴 어려움.",
+    "counseling_points": [
+      "식이 섭취량 먼저 확인",
+      "비타민D/칼슘제 중복 확인"
+    ],
+    "uncertainty_notes": [
+      "기저 질환과 총 섭취량에 따라 판단 달라짐"
+    ],
+    "source_title": "Calcium supplementation guidance",
+    "source_type": "guideline",
+    "citation": "General bone health guidance.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-iron-001",
+    "supplement": "철분",
+    "ingredient_aliases": [
+      "iron",
+      "ferrous"
+    ],
+    "clinical_question": "빈혈 또는 철결핍이 의심될 때 철분 보충이 필요한가?",
+    "population": "철결핍 위험 성인",
+    "conditions": [
+      "빈혈"
+    ],
+    "medications": [],
+    "interaction_risk": "moderate",
+    "interaction_summary": "갑상선호르몬, 일부 항생제와 흡수 간섭 가능성이 있어 시간차 복용이 중요.",
+    "evidence_level": "high",
+    "effect_size": {
+      "metric": "ferritin_repletion",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "effective if deficient"
+    },
+    "dosage_range": {
+      "min": 30,
+      "max": 60,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "변비/오심 가능",
+      "철결핍 확인 후 시작 권장"
+    ],
+    "summary": "철결핍이 확인된 경우에는 효과가 뚜렷하지만 비결핍 상태에서는 불필요한 복용이 될 수 있음.",
+    "counseling_points": [
+      "CBC/페리틴 확인",
+      "원인 평가 없이 장기 복용하지 않기"
+    ],
+    "uncertainty_notes": [
+      "철결핍 원인 평가 필요"
+    ],
+    "source_title": "Iron deficiency treatment guidance",
+    "source_type": "guideline",
+    "citation": "Iron deficiency management summaries.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-iodine-001",
+    "supplement": "요오드",
+    "ingredient_aliases": [
+      "iodine",
+      "아이오딘"
+    ],
+    "clinical_question": "갑상선 질환 환자에서 요오드 보충이 필요한가?",
+    "population": "갑상선 질환 성인",
+    "conditions": [
+      "갑상선 질환"
+    ],
+    "medications": [],
+    "interaction_risk": "high",
+    "interaction_summary": "과다 요오드는 갑상선 기능 이상을 악화시킬 수 있어 보충 전 식이와 질환 상태 확인이 우선.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "thyroid_support",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "benefit only if deficient"
+    },
+    "dosage_range": {
+      "min": 150,
+      "max": 150,
+      "unit": "mcg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "갑상선 질환에서 과다 섭취 주의"
+    ],
+    "summary": "결핍이 아니라면 추가 보충이 오히려 해가 될 수 있어 보수적으로 접근해야 함.",
+    "counseling_points": [
+      "해조류 섭취량 확인",
+      "갑상선 기능 검사와 함께 판단"
+    ],
+    "uncertainty_notes": [
+      "기저 갑상선 질환 유형에 따라 영향 다름"
+    ],
+    "source_title": "Iodine and thyroid guidance",
+    "source_type": "guideline",
+    "citation": "Thyroid nutrition guidance.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-glucosamine-001",
+    "supplement": "글루코사민",
+    "ingredient_aliases": [
+      "glucosamine"
+    ],
+    "clinical_question": "관절 통증 완화에 글루코사민이 도움이 되는가?",
+    "population": "퇴행성 관절증 성인",
+    "conditions": [
+      "관절 통증"
+    ],
+    "medications": [],
+    "interaction_risk": "low",
+    "interaction_summary": "대체로 안전하지만 항응고제 복용 중이면 개별 확인이 필요할 수 있음.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "pain_improvement",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "mixed benefit"
+    },
+    "dosage_range": {
+      "min": 1500,
+      "max": 1500,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "효과 개인차 큼"
+    ],
+    "summary": "관절 통증에 대한 근거는 혼재되어 있어 과도한 기대는 피하는 것이 좋음.",
+    "counseling_points": [
+      "효과 없으면 중단 시점 정하기",
+      "운동/체중 관리 병행"
+    ],
+    "uncertainty_notes": [
+      "제품 제형 차이 큼"
+    ],
+    "source_title": "Glucosamine reviews",
+    "source_type": "review",
+    "citation": "Mixed-evidence osteoarthritis reviews.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-ashwagandha-001",
+    "supplement": "아슈와간다",
+    "ingredient_aliases": [
+      "ashwagandha"
+    ],
+    "clinical_question": "스트레스 완화에 아슈와간다가 도움이 되는가?",
+    "population": "스트레스 호소 성인",
+    "conditions": [
+      "스트레스"
+    ],
+    "medications": [],
+    "interaction_risk": "moderate",
+    "interaction_summary": "진정 작용이 있는 약물과 병용 시 졸림이 심해질 수 있어 확인 필요.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "stress_score_change",
+      "value": -1,
+      "unit": "qualitative",
+      "comparison": "possible reduction"
+    },
+    "dosage_range": {
+      "min": 300,
+      "max": 600,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "갑상선 질환에서는 주의 필요"
+    ],
+    "summary": "일부 연구에서 스트레스 점수 개선 가능성이 있으나 장기 안전성은 제한적.",
+    "counseling_points": [
+      "수면/불안 증상과 구분해서 설명",
+      "장기 복용보다는 반응 평가"
+    ],
+    "uncertainty_notes": [
+      "보충제 표준화 차이 큼"
+    ],
+    "source_title": "Ashwagandha stress reviews",
+    "source_type": "review",
+    "citation": "Small stress reduction trials.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-berberine-001",
+    "supplement": "베르베린",
+    "ingredient_aliases": [
+      "berberine"
+    ],
+    "clinical_question": "혈당이나 지질 개선 목적으로 베르베린이 도움이 되는가?",
+    "population": "대사질환 관심 성인",
+    "conditions": [
+      "당뇨",
+      "고지혈증"
+    ],
+    "medications": [
+      "메트포르민",
+      "스타틴"
+    ],
+    "interaction_risk": "moderate",
+    "interaction_summary": "여러 약물대사 경로에 영향을 줄 가능성이 있어 병용약 확인이 필요.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "glycemic_change",
+      "value": -1,
+      "unit": "qualitative",
+      "comparison": "possible benefit"
+    },
+    "dosage_range": {
+      "min": 500,
+      "max": 1500,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "위장관 부작용 가능",
+      "병용약 확인 필요"
+    ],
+    "summary": "대사 지표 개선 가능성이 보고되지만 표준화된 권고 수준의 근거는 아직 약함.",
+    "counseling_points": [
+      "메트포르민 대체제로 설명하지 않기",
+      "간기능/병용약 확인"
+    ],
+    "uncertainty_notes": [
+      "제품 간 함량 차이와 연구 질 문제"
+    ],
+    "source_title": "Berberine metabolic reviews",
+    "source_type": "review",
+    "citation": "Small heterogeneous trials.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-curcumin-001",
+    "supplement": "커큐민",
+    "ingredient_aliases": [
+      "curcumin",
+      "강황"
+    ],
+    "clinical_question": "염증성 통증 완화에 커큐민이 도움이 되는가?",
+    "population": "통증/염증 호소 성인",
+    "conditions": [
+      "관절 통증"
+    ],
+    "medications": [],
+    "interaction_risk": "low",
+    "interaction_summary": "대체로 안전하지만 출혈 위험 약물 복용 시 보수적으로 확인하는 편이 좋음.",
+    "evidence_level": "low",
+    "effect_size": {
+      "metric": "pain_change",
+      "value": -1,
+      "unit": "qualitative",
+      "comparison": "possible reduction"
+    },
+    "dosage_range": {
+      "min": 500,
+      "max": 1000,
+      "unit": "mg/day",
+      "schedule": "daily"
+    },
+    "safety_flags": [
+      "흡수율 제품별 차이 큼"
+    ],
+    "summary": "일부 통증 완화 가능성이 있지만 제품별 흡수율과 연구 질 차이가 큼.",
+    "counseling_points": [
+      "제형 차이 설명",
+      "출혈 위험 약 복용 여부 확인"
+    ],
+    "uncertainty_notes": [
+      "표준화 어려움"
+    ],
+    "source_title": "Curcumin pain reviews",
+    "source_type": "review",
+    "citation": "Heterogeneous pain supplement reviews.",
+    "updated_at": "2026-03-08"
+  },
+  {
+    "id": "evidence-protein-001",
+    "supplement": "단백질",
+    "ingredient_aliases": [
+      "protein",
+      "프로틴",
+      "whey protein"
+    ],
+    "clinical_question": "근감소 예방이나 단백질 보충이 필요한가?",
+    "population": "고령자 또는 활동량 증가 성인",
+    "conditions": [
+      "근감소"
+    ],
+    "medications": [],
+    "interaction_risk": "low",
+    "interaction_summary": "신질환이 있으면 총 단백질 섭취량을 먼저 확인해야 함.",
+    "evidence_level": "moderate",
+    "effect_size": {
+      "metric": "muscle_mass_support",
+      "value": 1,
+      "unit": "qualitative",
+      "comparison": "supportive with exercise"
+    },
+    "dosage_range": {
+      "min": 20,
+      "max": 40,
+      "unit": "g/day",
+      "schedule": "per serving"
+    },
+    "safety_flags": [
+      "신질환에서는 개별화 필요"
+    ],
+    "summary": "운동과 병행 시 근육량 유지에 도움될 수 있으나 총 식이 단백질 평가가 먼저.",
+    "counseling_points": [
+      "식사 섭취량 먼저 확인",
+      "신기능 저하 시 총 단백질량 조절"
+    ],
+    "uncertainty_notes": [
+      "개별 활동량에 따라 필요량 차이 큼"
+    ],
+    "source_title": "Protein supplementation guidance",
+    "source_type": "guideline",
+    "citation": "Protein intake guidance summaries.",
+    "updated_at": "2026-03-08"
+  }
+]

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+requests
+PyJWT
+openai
+tiktoken
+tenacity

@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Logs / runtime outputs
+*.log
+nohup.out
+data/audit/*
+!data/audit/.gitkeep
+
+# Large data artifacts (not committed — app degrades gracefully without them)
+data/indexes/
+data/mfds_cache.db
+*.pkl
+*.pdf
+
+# Secrets
+*.pem
+*.key
+
+# Editor / local
+.claude/
+.idea/
+.vscode/
+
+# NOTE: 다음은 의도적으로 추적됨 (런타임 필요, 모두 소형)
+#   domain/auth/patients.db  (20KB 시드 계정)
+#   data/safety_rules.json, data/samples/*.json, data/feedback/*.jsonl, data/schemas/*.json

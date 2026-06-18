@@ -1,0 +1,19 @@
+# Render Blueprint — 갑상선 영양제 의사결정 지원 시스템
+# 대시보드 > New > Blueprint 에서 이 레포를 선택하면 자동 인식됩니다.
+# OPENAI_API_KEY 는 대시보드에서 비밀값으로 입력하세요 (sync: false).
+services:
+  - type: web
+    name: thyroid-supplement-cdss
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true   # main 브랜치 push 시 자동 재배포 (CD)
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false      # 대시보드에서 직접 입력 (레포에 노출 금지)
+      - key: NCBI_API_KEY
+        sync: false      # 선택: PubMed rate limit 상향
+      - key: MFDS_API_KEY
+        sync: false      # 선택: 미설정 시 내장 fallback 테이블 사용

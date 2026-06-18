@@ -1,0 +1,426 @@
+{
+  "patient": [
+    {
+      "name": "normal_fatigue",
+      "request": {
+        "message": "피로가 심한데 어떤 영양제가 좋을까요?",
+        "category": "전체",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "stress_no_history",
+      "request": {
+        "message": "병력은 없고 스트레스 완화가 목표예요",
+        "category": "전체",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "eye_health",
+      "request": {
+        "message": "눈 건강에 도움 되는 제품 추천해 주세요",
+        "category": "눈건강",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "gut_health",
+      "request": {
+        "message": "장 건강을 위해 유산균 제품을 찾고 있어요",
+        "category": "프로바이오틱스",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "sleep_support",
+      "request": {
+        "message": "잠을 잘 못 자서 수면 보조 영양제를 찾고 있어요",
+        "category": "전체",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "immune_support",
+      "request": {
+        "message": "면역력 관리용 영양제를 찾고 있어요",
+        "category": "면역",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true
+      }
+    },
+    {
+      "name": "empty_query_model",
+      "request": {
+        "message": "",
+        "category": "전체",
+        "include_context": false
+      },
+      "expect": {
+        "model_validation_error": true
+      }
+    },
+    {
+      "name": "blank_query_endpoint",
+      "request": {
+        "message": "   ",
+        "category": "전체",
+        "include_context": false
+      },
+      "expect": {
+        "endpoint_status": 400
+      }
+    },
+    {
+      "name": "no_results",
+      "request": {
+        "message": "존재하지않는영양제_테스트",
+        "category": "없는카테고리",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true,
+        "answer_contains": "찾지 못했습니다"
+      }
+    },
+    {
+      "name": "context_enabled",
+      "request": {
+        "message": "피로 개선 제품 추천",
+        "category": "전체",
+        "include_context": true
+      },
+      "expect": {
+        "has_answer": true,
+        "has_products_list": true,
+        "has_context": true,
+        "answer_contains": "입력 정보가 제한적이어서 일반적인 문서 기반 추천을 제공합니다."
+      }
+    }
+  ],
+  "doctor": [
+    {
+      "name": "supplement_only",
+      "request": {
+        "supplement": "오메가3",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "answer_contains": "현재 입력 정보가 제한적",
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "omega3_hypertension_hld",
+      "request": {
+        "supplement": "오메가3",
+        "dose": "4g/day",
+        "conditions": "HTN, 고지혈증",
+        "medications": "ARB, 스타틴",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "answer_contains": "용량: 4g/day",
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "coq10_statin",
+      "request": {
+        "supplement": "CoQ10",
+        "dose": "",
+        "conditions": "고지혈증",
+        "medications": "스타틴",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "answer_contains": "근거 강도는 낮은 편이라",
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "chromium_diabetes",
+      "request": {
+        "supplement": "크롬",
+        "dose": "200mcg/day",
+        "conditions": "당뇨",
+        "medications": "메트포르민",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "magnesium_kidney_disease",
+      "request": {
+        "supplement": "마그네슘",
+        "dose": "350mg/day",
+        "conditions": "만성 신질환",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "vitamin_d_hypercalcemia",
+      "request": {
+        "supplement": "비타민D",
+        "dose": "2000IU/day",
+        "conditions": "고칼슘혈증 병력",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "probiotic_immunocompromised",
+      "request": {
+        "supplement": "프로바이오틱스",
+        "dose": "",
+        "conditions": "면역저하",
+        "medications": "면역억제제",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "partial_fields",
+      "request": {
+        "supplement": "셀레늄",
+        "conditions": "갑상선 질환",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "empty_supplement_model",
+      "request": {
+        "supplement": "",
+        "dose": "",
+        "conditions": "",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "model_validation_error": true
+      }
+    },
+    {
+      "name": "context_enabled",
+      "request": {
+        "supplement": "오메가3",
+        "dose": "2g/day",
+        "conditions": "고중성지방혈증",
+        "medications": "",
+        "include_context": true
+      },
+      "expect": {
+        "has_answer": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_context": true,
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "no_evidence_unknown_supplement",
+      "request": {
+        "supplement": "비오틴",
+        "dose": "",
+        "conditions": "",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "answer_contains": "근거 데이터가 약하거나 없어서",
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "has_doctor_summary": true
+      }
+    },
+    {
+      "name": "calcium_osteoporosis",
+      "request": {
+        "supplement": "칼슘",
+        "dose": "500mg/day",
+        "conditions": "골다공증",
+        "medications": "칼슘제",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_doctor_summary": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ]
+      }
+    },
+    {
+      "name": "iron_anemia",
+      "request": {
+        "supplement": "철분",
+        "dose": "60mg/day",
+        "conditions": "빈혈",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_doctor_summary": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ]
+      }
+    },
+    {
+      "name": "iodine_thyroid",
+      "request": {
+        "supplement": "요오드",
+        "dose": "150mcg/day",
+        "conditions": "갑상선 질환",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_doctor_summary": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ],
+        "answer_contains": "상호작용 위험"
+      }
+    },
+    {
+      "name": "melatonin_sleep",
+      "request": {
+        "supplement": "멜라토닌",
+        "dose": "2mg/day",
+        "conditions": "수면장애",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_doctor_summary": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ]
+      }
+    },
+    {
+      "name": "protein_muscle_loss",
+      "request": {
+        "supplement": "단백질",
+        "dose": "30g/day",
+        "conditions": "근감소",
+        "medications": "",
+        "include_context": false
+      },
+      "expect": {
+        "has_answer": true,
+        "has_doctor_summary": true,
+        "sections": [
+          "### 1. 안전성 요약",
+          "### 2. 근거 요약",
+          "### 3. 상담 포인트"
+        ]
+      }
+    }
+  ]
+}

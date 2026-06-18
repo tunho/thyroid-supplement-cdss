@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DoctorEvidenceRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "supplement",
+    "clinical_question",
+    "evidence_level",
+    "summary",
+    "source_title",
+    "source_type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "supplement": {
+      "type": "string"
+    },
+    "ingredient_aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "clinical_question": {
+      "type": "string"
+    },
+    "population": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interaction_risk": {
+      "type": "string",
+      "enum": [
+        "none_known",
+        "low",
+        "moderate",
+        "high",
+        "contraindicated",
+        "unknown"
+      ]
+    },
+    "interaction_summary": {
+      "type": "string"
+    },
+    "evidence_level": {
+      "type": "string",
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "very_low",
+        "insufficient"
+      ]
+    },
+    "effect_size": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "comparison": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric"
+      ]
+    },
+    "dosage_range": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "schedule": {
+          "type": "string"
+        }
+      }
+    },
+    "safety_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "counseling_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_title": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "rct",
+        "meta_analysis",
+        "guideline",
+        "review",
+        "observational",
+        "label"
+      ]
+    },
+    "citation": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

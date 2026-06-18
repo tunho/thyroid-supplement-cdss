@@ -1,0 +1,1454 @@
+{
+  "generated_from": [
+    "domain/thyroid/rules.py",
+    "data/safety_rules.json"
+  ],
+  "total_citations": 189,
+  "unique_sources": 55,
+  "unique_pmids": [
+    "11932302",
+    "17284630",
+    "21591944",
+    "25266247",
+    "26462967",
+    "27521067",
+    "28056690",
+    "34297684",
+    "36480280"
+  ],
+  "by_source": {
+    "ATA2014-Q3a": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "counseling_points",
+        "line": 262,
+        "text": "\"[레보티록신 타이밍] 식전 60분 또는 취침 시(저녁식사 3시간 후) 일관 복용 — 일관성이 흡수 변동을 줄임 (ATA 2014 Q3a, Weak/moderate)\",  # [ATA2014-Q3a, PMID:25266247]"
+      }
+    ],
+    "ATA2014-Q3b": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "notes",
+        "line": 239,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2014-Q3c]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "study_dose",
+        "line": 255,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [clinical-standard] 결핍 치료 용량"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "counseling_points",
+        "line": 265,
+        "text": "\"[종합비타민 주의] 철·칼슘 함유 종합비타민도 LT4 흡수를 저해할 수 있어 시간 분리 (ATA 2014 Q3b)\",  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "counseling_points",
+        "line": 331,
+        "text": "\"비타민D는 ATA 2014 의 레보티록신 흡수 간섭 물질 목록(칼슘·철·담즙산결합제·제산제 등)에 포함되지 않음 — 일상 용량에서 간격 권고 근거 없음 (ATA 2014 Q3b)\",  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "multivitamin",
+        "slot": "notes",
+        "line": 363,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "ATA2014-Q3c": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "notes",
+        "line": 239,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2014-Q3c]"
+      }
+    ],
+    "ATA2015": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "applicable_conditions",
+        "line": 283,
+        "text": "\"thyroid_cancer\",          # [ATA2015, PMID:26462967] TSH 억제 골건강 — 수술전후 포함"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "notes",
+        "line": 310,
+        "text": "),  # [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "applicable_conditions",
+        "line": 571,
+        "text": "\"thyroid_cancer\",          # [ATA2015, PMID:26462967] TSH 억제 골건강 — 수술전후 포함"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "ATA2015-Rec57": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 111,
+        "text": "\"[갑상선암 RAI 치료 준비] 저요오드식(≤50µg/일) 1~2주 — 요오드 보충제·다시마·해조류·요오드 조영제 회피 (ATA 2015 Rec 57, Weak/low)\",  # [ATA2015-Rec57, PMID:26462967]"
+      }
+    ],
+    "ATA2016-Rec36": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "avoid_conditions",
+        "line": 47,
+        "text": "\"autonomous_thyroid_nodule\", # [ATA2016-Rec36, PMID:27521067] Jod-Basedow — 결절성 갑상선종 요오드 유발 항진증"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "contraindications",
+        "line": 51,
+        "text": "\"active_hyperthyroidism\", # [ATA2016-Rec36, PMID:27521067] 활성 항진증 — 요오드가 갑상선중독증 악화(Jod-Basedow)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 110,
+        "text": "\"[결절성 갑상선종·자율성 결절] 요오드 보충제·다시마는 Jod-Basedow(요오드 유발 항진증) 위험 — 회피 (ATA 2016 Rec 36)\",  # [ATA2016-Rec36, PMID:27521067]"
+      }
+    ],
+    "ATA2016-Rec37": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      }
+    ],
+    "ATA2017": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "evidence_level",
+        "line": 60,
+        "text": "\"evidence_level\": \"guideline\",  # [ATA2017] [WHO2007-IDD]"
+      }
+    ],
+    "ATA2017-R10": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      }
+    ],
+    "ATA2017-R11": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 118,
+        "text": "\"[TPOAb+ 임신] 매 4주 TSH 측정 — 임신 중반(16~20주)까지, 이후 24~28주 1회 (ATA 2017 R11, Strong, high)\",  # [ATA2017-R11, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 204,
+        "text": "\"[TPOAb+ 임신] 매 4주 TSH 측정 — 임신 중반(16~20주)까지, 이후 24~28주 1회 (ATA 2017 R11, Strong, high)\",  # [ATA2017-R11, PMID:28056690]"
+      }
+    ],
+    "ATA2017-R12": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "required_patient_info",
+        "line": 146,
+        "text": "\"lab_values.TPOAb\",       # [ATA2017-R12] TPOAb 상태 — 임신 시 보충 평가"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "required_patient_info",
+        "line": 147,
+        "text": "\"risk_factors\",           # [ATA2017-R12] 임신·수유 상태"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      }
+    ],
+    "ATA2017-R29": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 119,
+        "text": "\"[TPOAb+ TSH > 2.5 mIU/L 임신] LT4 시작 고려 (ATA 2017 R29, Weak, moderate)\",                              # [ATA2017-R29, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 205,
+        "text": "\"[TPOAb+ TSH > 2.5 mIU/L 임신] LT4 시작 고려 (ATA 2017 R29, Weak, moderate)\",                              # [ATA2017-R29, PMID:28056690]"
+      }
+    ],
+    "ATA2017-R4": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 117,
+        "text": "\"[인구 집단 수준] 소변 요오드 — 개인 영양 상태 마커로 부적합 (ATA 2017 R4)\",       # [ATA2017-R4]"
+      }
+    ],
+    "ATA2017-R46d": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 112,
+        "text": "\"[갑상선 항진증 수술 준비 예외] potassium iodide 50~100 mg/일 × 7~10일 — 의사 처방 하에서만 (ATA 2017 R46d, Weak, low)\",  # [ATA2017-R46d, PMID:28056690]"
+      }
+    ],
+    "ATA2017-R5": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 35,
+        "text": "\"pregnancy\",                          # [ATA2017-R5, PMID:28056690] 임산부 250 µg/일 (Strong, high)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "possible_benefits",
+        "line": 41,
+        "text": "\"[임신/수유] 태아·영아 신경 발달과 갑상선 호르몬 합성에 중요\",            # [ATA2017-R5] [ATA2017-R81]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "required_patient_info",
+        "line": 58,
+        "text": "\"risk_factors\",      # [ATA2017-R5] 임신·수유 상태 필수 (권장량 250 µg/일)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "study_dose",
+        "line": 91,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R7] [ATA2017-R81]"
+      }
+    ],
+    "ATA2017-R6": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "study_dose",
+        "line": 91,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R7] [ATA2017-R81]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 102,
+        "text": "\"[임신 계획/임신/수유] 칼륨 요오드화물 형태 150 µg/일 보충, 임신 3개월 전 시작\",     # [ATA2017-R6]"
+      }
+    ],
+    "ATA2017-R66": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "notes",
+        "line": 310,
+        "text": "),  # [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "ATA2017-R7": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "study_dose",
+        "line": 91,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R7] [ATA2017-R81]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 106,
+        "text": "\"[저자원 지역] 출산 후 또는 임신 중 iodized oil 400 mg/년 1회 대안 (장기 전략 X)\", # [ATA2017-R7] [ATA2017-R83]"
+      }
+    ],
+    "ATA2017-R73": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "notes",
+        "line": 310,
+        "text": "),  # [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "ATA2017-R8": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 104,
+        "text": "\"[갑상선 항진증 치료 중 / LT4 복용 여성] 요오드 추가 보충 불필요\",                  # [ATA2017-R8]"
+      }
+    ],
+    "ATA2017-R81": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 36,
+        "text": "\"lactation\",                          # [ATA2017-R81, PMID:28056690] 수유 250 µg/일 (Strong, high)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "possible_benefits",
+        "line": 41,
+        "text": "\"[임신/수유] 태아·영아 신경 발달과 갑상선 호르몬 합성에 중요\",            # [ATA2017-R5] [ATA2017-R81]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "study_dose",
+        "line": 91,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R7] [ATA2017-R81]"
+      }
+    ],
+    "ATA2017-R82": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 103,
+        "text": "\"[수유] 다시마·해조류는 요오드 함량 일관성 없음 — 정량 보충제 권장\",                 # [ATA2017-R82]"
+      }
+    ],
+    "ATA2017-R83": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 106,
+        "text": "\"[저자원 지역] 출산 후 또는 임신 중 iodized oil 400 mg/년 1회 대안 (장기 전략 X)\", # [ATA2017-R7] [ATA2017-R83]"
+      }
+    ],
+    "ATA2017-R84": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      }
+    ],
+    "ATA2017-R9": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 105,
+        "text": "\"[임신] 과도한 요오드 노출 회피 — GD 수술 준비 예외\",                            # [ATA2017-R9]"
+      }
+    ],
+    "ATA2017-R9 — 임신 중 과도 노출 회피": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "avoid_conditions",
+        "line": 44,
+        "text": "\"graves_disease\",            # [ATA2017-R9 — 임신 중 과도 노출 회피]"
+      }
+    ],
+    "ATA2017-R92": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "required_patient_info",
+        "line": 57,
+        "text": "\"lab_values.TPOAb\",  # [ATA2017-R92] TPOAb 상태 — PPT 예방 평가"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      }
+    ],
+    "ATAETA2022-KP6.1.1": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "applicable_conditions",
+        "line": 127,
+        "text": "\"graves_orbitopathy\",      # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]  (legacy PMID:21525463 오기 제거 — 무관 논문)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      }
+    ],
+    "EUGOGO2021-Rec7": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "applicable_conditions",
+        "line": 127,
+        "text": "\"graves_orbitopathy\",      # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]  (legacy PMID:21525463 오기 제거 — 무관 논문)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "evidence_level",
+        "line": 149,
+        "text": "\"evidence_level\": \"rct\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 195,
+        "text": "\"[경증·활동성 그레이브스 안병증] sodium selenite 200µg(원소 91µg) 또는 selenomethionine 100µg, 6개월 한시 — 공복 복용 (EUGOGO 2021 Rec #7, Strong/low)\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 196,
+        "text": "\"[지역 단서] 셀레늄 충족(비결핍) 지역에서는 안병증 보충 효과 미확인 — 한국인 셀레늄 영양상태 확인 후 적용 권고\",  # [EUGOGO2021-Rec7, PMID:34297684]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 203,
+        "text": "\"[경증·활동성 GO 보충 시] 6개월 코스 전후 CAS·GO-QoL 재평가 — 중등도-중증 진행 시 면역억제 전환 (EUGOGO 2021 Rec #7/#8)\",  # [EUGOGO2021-Rec7, PMID:34297684]"
+      }
+    ],
+    "Endocrine-Society-VitD2011": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "official_upper_limit",
+        "line": 324,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS2023] [Endocrine-Society-VitD2011]"
+      }
+    ],
+    "Gartner2002": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 132,
+        "text": "\"갑상선 과산화효소 항체(TPOAb) 감소 (하시모토)\",            # [Gartner2002, PMID:11932302]"
+      }
+    ],
+    "KDRI2025": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "official_upper_limit",
+        "line": 188,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "recommended_dose",
+        "line": 250,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "official_upper_limit",
+        "line": 259,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "recommended_dose",
+        "line": 319,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "official_upper_limit",
+        "line": 324,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS2023] [Endocrine-Society-VitD2011]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "recommended_dose",
+        "line": 397,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "official_upper_limit",
+        "line": 401,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "recommended_dose",
+        "line": 455,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "official_upper_limit",
+        "line": 459,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "MFDS-health_food-stats": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "recommended_dose",
+        "line": 250,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "recommended_dose",
+        "line": 319,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "recommended_dose",
+        "line": 397,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "recommended_dose",
+        "line": 455,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS-health_food-stats]"
+      }
+    ],
+    "MFDS-health_food_ingredient": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "probiotics",
+        "slot": "recommended_dose",
+        "line": 493,
+        "text": "),  # [NIH-ODS-no-fact-sheet] [MFDS-health_food_ingredient]"
+      }
+    ],
+    "MFDS2023": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "official_upper_limit",
+        "line": 188,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "official_upper_limit",
+        "line": 259,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "official_upper_limit",
+        "line": 324,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS2023] [Endocrine-Society-VitD2011]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "official_upper_limit",
+        "line": 401,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS2023]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "official_upper_limit",
+        "line": 459,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "Marcocci2011": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "evidence_level",
+        "line": 149,
+        "text": "\"evidence_level\": \"rct\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 195,
+        "text": "\"[경증·활동성 그레이브스 안병증] sodium selenite 200µg(원소 91µg) 또는 selenomethionine 100µg, 6개월 한시 — 공복 복용 (EUGOGO 2021 Rec #7, Strong/low)\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      }
+    ],
+    "NIH-ODS-Iodine": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 107,
+        "text": "\"[하시모토/기능저하증] 소량(150 µg/일 이내) 일반적 허용 — 과잉 주의\",               # [NIH-ODS-Iodine] [WHO2007-IDD]"
+      }
+    ],
+    "NIH-ODS-Iron": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "recommended_dose",
+        "line": 250,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "official_upper_limit",
+        "line": 259,
+        "text": "),  # [NIH-ODS-Iron] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "NIH-ODS-Magnesium": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "recommended_dose",
+        "line": 455,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "magnesium",
+        "slot": "official_upper_limit",
+        "line": 459,
+        "text": "),  # [NIH-ODS-Magnesium] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "NIH-ODS-Selenium": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "avoid_conditions",
+        "line": 137,
+        "text": "\"selenium_toxicity_history\",  # [NIH-ODS-Selenium]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "official_upper_limit",
+        "line": 188,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "NIH-ODS-VitaminD": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "recommended_dose",
+        "line": 319,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "official_upper_limit",
+        "line": 324,
+        "text": "),  # [NIH-ODS-VitaminD] [KDRI2025] [MFDS2023] [Endocrine-Society-VitD2011]"
+      }
+    ],
+    "NIH-ODS-Zinc": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "recommended_dose",
+        "line": 397,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "zinc",
+        "slot": "official_upper_limit",
+        "line": 401,
+        "text": "),  # [NIH-ODS-Zinc] [KDRI2025] [MFDS2023]"
+      }
+    ],
+    "NIH-ODS-no-fact-sheet": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "probiotics",
+        "slot": "recommended_dose",
+        "line": 493,
+        "text": "),  # [NIH-ODS-no-fact-sheet] [MFDS-health_food_ingredient]"
+      }
+    ],
+    "Negro2007": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      }
+    ],
+    "PMID:11932302": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 132,
+        "text": "\"갑상선 과산화효소 항체(TPOAb) 감소 (하시모토)\",            # [Gartner2002, PMID:11932302]"
+      }
+    ],
+    "PMID:17284630": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      }
+    ],
+    "PMID:21591944": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "evidence_level",
+        "line": 149,
+        "text": "\"evidence_level\": \"rct\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 195,
+        "text": "\"[경증·활동성 그레이브스 안병증] sodium selenite 200µg(원소 91µg) 또는 selenomethionine 100µg, 6개월 한시 — 공복 복용 (EUGOGO 2021 Rec #7, Strong/low)\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      }
+    ],
+    "PMID:25266247": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "notes",
+        "line": 239,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2014-Q3c]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "study_dose",
+        "line": 255,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [clinical-standard] 결핍 치료 용량"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "counseling_points",
+        "line": 262,
+        "text": "\"[레보티록신 타이밍] 식전 60분 또는 취침 시(저녁식사 3시간 후) 일관 복용 — 일관성이 흡수 변동을 줄임 (ATA 2014 Q3a, Weak/moderate)\",  # [ATA2014-Q3a, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "counseling_points",
+        "line": 265,
+        "text": "\"[종합비타민 주의] 철·칼슘 함유 종합비타민도 LT4 흡수를 저해할 수 있어 시간 분리 (ATA 2014 Q3b)\",  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "counseling_points",
+        "line": 331,
+        "text": "\"비타민D는 ATA 2014 의 레보티록신 흡수 간섭 물질 목록(칼슘·철·담즙산결합제·제산제 등)에 포함되지 않음 — 일상 용량에서 간격 권고 근거 없음 (ATA 2014 Q3b)\",  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "multivitamin",
+        "slot": "notes",
+        "line": 363,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "PMID:26462967": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 111,
+        "text": "\"[갑상선암 RAI 치료 준비] 저요오드식(≤50µg/일) 1~2주 — 요오드 보충제·다시마·해조류·요오드 조영제 회피 (ATA 2015 Rec 57, Weak/low)\",  # [ATA2015-Rec57, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "applicable_conditions",
+        "line": 283,
+        "text": "\"thyroid_cancer\",          # [ATA2015, PMID:26462967] TSH 억제 골건강 — 수술전후 포함"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "notes",
+        "line": 310,
+        "text": "),  # [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "applicable_conditions",
+        "line": 571,
+        "text": "\"thyroid_cancer\",          # [ATA2015, PMID:26462967] TSH 억제 골건강 — 수술전후 포함"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      }
+    ],
+    "PMID:27521067": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "avoid_conditions",
+        "line": 47,
+        "text": "\"autonomous_thyroid_nodule\", # [ATA2016-Rec36, PMID:27521067] Jod-Basedow — 결절성 갑상선종 요오드 유발 항진증"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "contraindications",
+        "line": 51,
+        "text": "\"active_hyperthyroidism\", # [ATA2016-Rec36, PMID:27521067] 활성 항진증 — 요오드가 갑상선중독증 악화(Jod-Basedow)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 110,
+        "text": "\"[결절성 갑상선종·자율성 결절] 요오드 보충제·다시마는 Jod-Basedow(요오드 유발 항진증) 위험 — 회피 (ATA 2016 Rec 36)\",  # [ATA2016-Rec36, PMID:27521067]"
+      }
+    ],
+    "PMID:28056690": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 35,
+        "text": "\"pregnancy\",                          # [ATA2017-R5, PMID:28056690] 임산부 250 µg/일 (Strong, high)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 36,
+        "text": "\"lactation\",                          # [ATA2017-R81, PMID:28056690] 수유 250 µg/일 (Strong, high)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 112,
+        "text": "\"[갑상선 항진증 수술 준비 예외] potassium iodide 50~100 mg/일 × 7~10일 — 의사 처방 하에서만 (ATA 2017 R46d, Weak, low)\",  # [ATA2017-R46d, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 118,
+        "text": "\"[TPOAb+ 임신] 매 4주 TSH 측정 — 임신 중반(16~20주)까지, 이후 24~28주 1회 (ATA 2017 R11, Strong, high)\",  # [ATA2017-R11, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 119,
+        "text": "\"[TPOAb+ TSH > 2.5 mIU/L 임신] LT4 시작 고려 (ATA 2017 R29, Weak, moderate)\",                              # [ATA2017-R29, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 204,
+        "text": "\"[TPOAb+ 임신] 매 4주 TSH 측정 — 임신 중반(16~20주)까지, 이후 24~28주 1회 (ATA 2017 R11, Strong, high)\",  # [ATA2017-R11, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 205,
+        "text": "\"[TPOAb+ TSH > 2.5 mIU/L 임신] LT4 시작 고려 (ATA 2017 R29, Weak, moderate)\",                              # [ATA2017-R29, PMID:28056690]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "vitamin_d",
+        "slot": "notes",
+        "line": 310,
+        "text": "),  # [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "calcium",
+        "slot": "notes",
+        "line": 605,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [ATA2017-R66, ATA2017-R73, PMID:28056690] [ATA2015, PMID:26462967]"
+      },
+      {
+        "file": "data/safety_rules.json",
+        "block": "pregnancy_tsh_elevated_warning",
+        "slot": "(message)",
+        "line": 0,
+        "text": "임신 중 TSH {lab.TSH} mIU/L — 임신 trimester-specific upper limit 4.0 mIU/L 초과. ATA 2017 R26 권고에 따라 임신성 갑상선기능저하/아임상 평가가 우선되어야 하며, 영양제 평가는 그 이후 진행을 권고합니다. [PMID:28056690]"
+      },
+      {
+        "file": "data/safety_rules.json",
+        "block": "pregnancy_tpoab_positive_selenium_caution",
+        "slot": "(message)",
+        "line": 0,
+        "text": "ATA 2017 R12: 임신 중 TPOAb 양성 산모에 대한 셀레늄 보충은 권장되지 않음 (Weak recommendation, Moderate quality). 산후 갑상선염(PPT) 예방 효과 미확인. [PMID:28056690]"
+      },
+      {
+        "file": "data/safety_rules.json",
+        "block": "pregnancy_iodine_excess_info",
+        "slot": "(message)",
+        "line": 0,
+        "text": "ATA 2017 R10: 임신 중 요오드 일일 총섭취량 500µg 초과 시 태아 갑상선기능저하 위험. 보충제·산전비타민·식이 합계 점검 필요. [PMID:28056690]"
+      },
+      {
+        "file": "data/safety_rules.json",
+        "block": "lactation_iodine_excess_info",
+        "slot": "(message)",
+        "line": 0,
+        "text": "ATA 2017 R84: 수유부 요오드 일일 총섭취량 500µg 초과 시 영아 갑상선기능저하 위험. 모유로 이행됨. [PMID:28056690]"
+      },
+      {
+        "file": "data/safety_rules.json",
+        "block": "pregnancy_lt4_dose_adjustment_info",
+        "slot": "(message)",
+        "line": 0,
+        "text": "ATA 2017 R36: 임신 확인 즉시 levothyroxine 20~30% 증량 + TSH 4주 간격 모니터링 권고. 영양제 평가 시 LT4 흡수 간섭 (Fe/Ca/Mg/Zn 최소 4시간 간격 권장) 함께 확인 필요. [PMID:28056690]"
+      }
+    ],
+    "PMID:34297684": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "applicable_conditions",
+        "line": 127,
+        "text": "\"graves_orbitopathy\",      # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]  (legacy PMID:21525463 오기 제거 — 무관 논문)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "evidence_level",
+        "line": 149,
+        "text": "\"evidence_level\": \"rct\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 195,
+        "text": "\"[경증·활동성 그레이브스 안병증] sodium selenite 200µg(원소 91µg) 또는 selenomethionine 100µg, 6개월 한시 — 공복 복용 (EUGOGO 2021 Rec #7, Strong/low)\",  # [EUGOGO2021-Rec7, PMID:34297684] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "counseling_points",
+        "line": 196,
+        "text": "\"[지역 단서] 셀레늄 충족(비결핍) 지역에서는 안병증 보충 효과 미확인 — 한국인 셀레늄 영양상태 확인 후 적용 권고\",  # [EUGOGO2021-Rec7, PMID:34297684]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "monitoring_parameters",
+        "line": 203,
+        "text": "\"[경증·활동성 GO 보충 시] 6개월 코스 전후 CAS·GO-QoL 재평가 — 중등도-중증 진행 시 면역억제 전환 (EUGOGO 2021 Rec #7/#8)\",  # [EUGOGO2021-Rec7, PMID:34297684]"
+      }
+    ],
+    "PMID:36480280": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "applicable_conditions",
+        "line": 127,
+        "text": "\"graves_orbitopathy\",      # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]  (legacy PMID:21525463 오기 제거 — 무관 논문)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 133,
+        "text": "\"경증·활동성·최근 발병 그레이브스 안병증 개선 — 중등도-중증엔 근거 없음 (EUGOGO 2021 Rec #7 / 2022 ATA/ETA TED KP6.1.1)\",  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "notes",
+        "line": 166,
+        "text": "),  # [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [Marcocci2011, PMID:21591944] [ATA2017-R12, PMID:28056690] [Negro2007, PMID:17284630] [ATA2017-R92]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "recommended_dose",
+        "line": 176,
+        "text": "),  # [NIH-ODS-Selenium] [KDRI2025] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "study_dose",
+        "line": 182,
+        "text": "),  # [Marcocci2011, PMID:21591944] [EUGOGO2021-Rec7, PMID:34297684] [ATAETA2022-KP6.1.1, PMID:36480280]"
+      }
+    ],
+    "WHO2007-IDD": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 32,
+        "text": "\"iodine_deficiency\",                  # [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "applicable_conditions",
+        "line": 34,
+        "text": "\"goiter_iodine_deficiency\",           # [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "possible_benefits",
+        "line": 40,
+        "text": "\"요오드 결핍 지역에서 갑상선종 예방\",                                   # [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "evidence_level",
+        "line": 60,
+        "text": "\"evidence_level\": \"guideline\",  # [ATA2017] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "notes",
+        "line": 72,
+        "text": "),  # [ATA2017-R5] [ATA2017-R10] [ATA2017-R92] [ATA2016-Rec36, PMID:27521067] [ATA2016-Rec37] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "recommended_dose",
+        "line": 85,
+        "text": "),  # [ATA2017-R5] [ATA2017-R6] [ATA2017-R81] [NIH-ODS-Iodine] [KDRI2025] [WHO2007-IDD] [MFDS-health_food-stats]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "official_upper_limit",
+        "line": 100,
+        "text": "),  # [ATA2017-R10] [ATA2017-R84] [NIH-ODS-Iodine] [KDRI2025] [MFDS2023] [WHO2007-IDD]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 107,
+        "text": "\"[하시모토/기능저하증] 소량(150 µg/일 이내) 일반적 허용 — 과잉 주의\",               # [NIH-ODS-Iodine] [WHO2007-IDD]"
+      }
+    ],
+    "clinical-standard": [
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "possible_benefits",
+        "line": 39,
+        "text": "\"갑상선 호르몬 합성에 필수 미량원소\",                                   # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "contraindications",
+        "line": 50,
+        "text": "\"iodine_allergy\",         # [clinical-standard] 요오드 알레르기 — 표준 절대 금기(정의적)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 108,
+        "text": "\"[메티마졸/PTU 복용 중] 요오드 섭취 변화가 약물 효과에 영향 가능 — 처방의 확인\",     # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "counseling_points",
+        "line": 109,
+        "text": "\"[다시마·해조류 일반] 제품마다 요오드 함량 수십~수천 µg 불규칙 — 임상 별도 취급\",    # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 115,
+        "text": "\"TSH, Free T4, Free T3 — 요오드 섭취량 변경 후\",                                # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iodine",
+        "slot": "monitoring_parameters",
+        "line": 116,
+        "text": "\"항갑상선항체 (TPOAb, TRAb) — 자가면역 갑상선 질환 시\",                          # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "possible_benefits",
+        "line": 134,
+        "text": "\"산화 스트레스 감소\",                                    # [clinical-standard]"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "selenium",
+        "slot": "contraindications",
+        "line": 141,
+        "text": "\"known_selenium_hypersensitivity\",  # [clinical-standard] 셀레늄 과민증 — 표준 절대 금기(정의적)"
+      },
+      {
+        "file": "domain/thyroid/rules.py",
+        "block": "iron",
+        "slot": "study_dose",
+        "line": 255,
+        "text": "),  # [ATA2014-Q3b, PMID:25266247] [clinical-standard] 결핍 치료 용량"
+      }
+    ]
+  }
+}

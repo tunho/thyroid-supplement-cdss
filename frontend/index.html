@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🦋 갑상선영양제 AI · 근거 기반 의사결정 지원</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2><span class="logo-mark">🦋</span>갑상선<span class="accent">AI</span></h2>
+        <p>영양제 근거·의사결정 지원</p>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-group">
+          <span class="nav-group-label">주요</span>
+          <button class="nav-btn active" data-target="patient-view">환자 상담</button>
+          <button class="nav-btn" data-target="doctor-view">의사 결정 지원</button>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">검토</span>
+          <button class="nav-btn" data-target="analytics-view">데이터 분석</button>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">계정</span>
+          <button class="nav-btn" id="nav-profile" data-target="profile-view">내 프로필 설정</button>
+          <button class="nav-btn" id="nav-feedback" data-target="feedback-view">피드백 주기</button>
+          <button class="nav-btn" id="nav-my-feedback" data-target="my-feedback-view">내 피드백</button>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <!-- 로그인 전 -->
+        <div id="login-section">
+          <div class="auth-tabs">
+            <button class="auth-tab active" id="tab-patient" onclick="switchAuthTab('patient')">환자</button>
+            <button class="auth-tab" id="tab-doctor" onclick="switchAuthTab('doctor')">의사</button>
+          </div>
+          <!-- 환자 로그인 -->
+          <div id="patient-auth" class="auth-panel">
+            <input type="text" id="patient-login-id" placeholder="환자 ID">
+            <input type="password" id="patient-login-pw" placeholder="비밀번호">
+            <div class="auth-actions">
+              <button id="patient-login-btn" class="primary-btn mini">로그인</button>
+              <button id="patient-demo-login-btn" class="secondary-btn mini">데모 로그인</button>
+            </div>
+            <button id="patient-register-btn" class="secondary-btn mini auth-full-btn">회원가입</button>
+            <details class="demo-hint">
+              <summary>데모 계정</summary>
+              <p>환자: vp-001 / demo1234 · 운영자: dr_lee</p>
+            </details>
+          </div>
+          <!-- 의사 로그인 -->
+          <div id="doctor-auth" class="auth-panel initially-hidden">
+            <input type="text" id="login-id" placeholder="의사 ID (예: dr_review)">
+            <input type="password" id="login-pw" placeholder="비밀번호">
+            <div class="auth-actions">
+              <button id="login-btn" class="primary-btn mini">로그인</button>
+              <button id="doctor-demo-login-btn" class="secondary-btn mini">데모 로그인</button>
+            </div>
+          </div>
+        </div>
+        <!-- 로그인 후 -->
+        <div id="user-section" class="auth-panel initially-hidden">
+          <span id="logged-in-user">사용자</span>
+          <button id="logout-btn" class="secondary-btn mini">로그아웃</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Patient View -->
+      <section id="patient-view" class="view-section active">
+        <header>
+          <h1><span class="page-mark">🦋</span> 갑상선 영양제 상담</h1>
+          <p>궁금한 내용을 먼저 질문하고, 필요한 정보는 아래에서 천천히 보완할 수 있습니다.</p>
+          <details class="scope-note scope-note-compact">
+            <summary>상담 범위 안내</summary>
+            <p>초기 범위: Hashimoto thyroiditis, hypothyroidism, Graves' disease, hyperthyroidism 중심으로 안내합니다. 브랜드명만 입력한 경우 성분명 확인이 필요합니다.</p>
+          </details>
+        </header>
+        <div class="content-body">
+          <div class="chat-container glass-panel patient-chat-panel">
+            <div class="consultation-topline">
+              <div>
+                <h3>질문하기</h3>
+                <p id="patient-info-mode-note" class="mode-note">현재 입력 정보가 제한적이므로 개인별 판단에는 한계가 있습니다.</p>
+                <div id="patient-context-status" class="context-status-row" aria-label="입력 정보 상태" aria-live="polite"></div>
+              </div>
+              <span id="patient-info-mode-badge" class="mode-badge general">일반 정보</span>
+            </div>
+            <div class="chat-input-area primary-chat-input">
+              <input type="text" id="patient-input" placeholder="예: 하시모토병인데 요오드 영양제 먹어도 될까요?" />
+              <button id="patient-btn" class="primary-btn">전송</button>
+            </div>
+            <div id="patient-chat-output" class="chat-output" aria-live="polite" aria-relevant="additions">
+              <div class="message agent">안녕하세요! 갑상선 환자를 위한 영양제 상담 AI입니다. 드시고 계신 약이나 영양제, 증상 등을 편하게 질문해 주세요.</div>
+            </div>
+          </div>
+
+          <div class="glass-panel patient-context-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>답변 정확도를 높이는 정보</h3>
+                <p>프로필과 별개로 이번 상담에만 사용하는 정보입니다. 알고 있는 범위만 입력해도 됩니다.</p>
+              </div>
+            </div>
+            <h4 class="context-section-title">먼저 확인하면 좋은 정보</h4>
+
+            <!-- 영양제 선택 -->
+            <div class="form-group tag-select-group">
+              <label>섭취하려는 영양제 <span class="tag-hint">(MVP 7종 · 복수 선택 가능)</span></label>
+              <div class="tag-select-row" id="ctx-supplement-tags">
+                <button type="button" class="tag-btn" data-value="iodine" data-field="ctx-supplement">요오드</button>
+                <button type="button" class="tag-btn" data-value="selenium" data-field="ctx-supplement">셀레늄</button>
+                <button type="button" class="tag-btn" data-value="iron" data-field="ctx-supplement">철분</button>
+                <button type="button" class="tag-btn" data-value="vitamin_d" data-field="ctx-supplement">비타민D</button>
+                <button type="button" class="tag-btn" data-value="zinc" data-field="ctx-supplement">아연</button>
+                <button type="button" class="tag-btn" data-value="magnesium" data-field="ctx-supplement">마그네슘</button>
+                <button type="button" class="tag-btn" data-value="probiotics" data-field="ctx-supplement">프로바이오틱스</button>
+                <button type="button" class="tag-btn tag-btn--out" data-value="__other__" data-field="ctx-supplement">범위 밖 (직접 입력)</button>
+              </div>
+              <input type="hidden" id="ctx-supplement" value="">
+              <div class="tag-custom-input-wrap" id="ctx-supplement-custom-wrap" style="display:none">
+                <input type="text" id="ctx-supplement-custom" placeholder="성분명 직접 입력 (예: 오메가3)" class="tag-custom-input">
+              </div>
+            </div>
+
+            <!-- 진단명 선택 -->
+            <div class="form-group tag-select-group">
+              <label>진단명 <span class="tag-hint">(복수 선택 가능)</span></label>
+              <div class="tag-select-row" id="ctx-conditions-tags">
+                <button type="button" class="tag-btn" data-value="하시모토 갑상선염" data-field="ctx-conditions">하시모토 갑상선염</button>
+                <button type="button" class="tag-btn" data-value="갑상선기능저하증" data-field="ctx-conditions">갑상선기능저하증</button>
+                <button type="button" class="tag-btn" data-value="그레이브스병" data-field="ctx-conditions">그레이브스병</button>
+                <button type="button" class="tag-btn" data-value="갑상선기능항진증" data-field="ctx-conditions">갑상선기능항진증</button>
+                <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="ctx-conditions">기타 (직접 입력)</button>
+              </div>
+              <input type="hidden" id="ctx-conditions" value="">
+              <div class="tag-custom-input-wrap" id="ctx-conditions-custom-wrap" style="display:none">
+                <input type="text" id="ctx-conditions-custom" placeholder="진단명 직접 입력" class="tag-custom-input">
+              </div>
+            </div>
+
+            <!-- 복용 약물 선택 -->
+            <div class="form-group tag-select-group">
+              <label>복용 약물 <span class="tag-hint">(복수 선택 가능)</span></label>
+              <div class="tag-select-row" id="ctx-medications-tags">
+                <button type="button" class="tag-btn" data-value="레보티록신" data-field="ctx-medications">레보티록신</button>
+                <button type="button" class="tag-btn" data-value="메티마졸" data-field="ctx-medications">메티마졸</button>
+                <button type="button" class="tag-btn" data-value="프로필티오우라실" data-field="ctx-medications">프로필티오우라실</button>
+                <button type="button" class="tag-btn" data-value="리오티로닌" data-field="ctx-medications">리오티로닌</button>
+                <button type="button" class="tag-btn" data-value="없음" data-field="ctx-medications">복용약 없음</button>
+                <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="ctx-medications">기타 (직접 입력)</button>
+              </div>
+              <input type="hidden" id="ctx-medications" value="">
+              <div class="tag-custom-input-wrap" id="ctx-medications-custom-wrap" style="display:none">
+                <input type="text" id="ctx-medications-custom" placeholder="약물명 직접 입력" class="tag-custom-input">
+              </div>
+            </div>
+            <details class="collapsible-panel context-details">
+              <summary>답변을 더 정확하게 만들기</summary>
+              <div class="context-grid">
+                <div class="form-group optional-field">
+                  <label>나이</label>
+                  <input type="number" id="ctx-age" placeholder="예: 42">
+                </div>
+                <div class="form-group optional-field">
+                  <label>성별</label>
+                  <select id="ctx-sex">
+                    <option value="">선택 안 함</option>
+                    <option value="female">여성</option>
+                    <option value="male">남성</option>
+                    <option value="other">기타/응답 안 함</option>
+                  </select>
+                </div>
+                <div class="form-group optional-field">
+                  <label>임신/수유 여부</label>
+                  <select id="ctx-pregnancy">
+                    <option value="">해당 없음/선택 안 함</option>
+                    <option value="pregnant">임신 중</option>
+                    <option value="breastfeeding">수유 중</option>
+                    <option value="planning">임신 준비 중</option>
+                  </select>
+                </div>
+                <div class="form-group optional-field">
+                  <label>현재 복용 중인 영양제</label>
+                  <input type="text" id="ctx-current-supplements" placeholder="예: 비타민D">
+                </div>
+                <div class="form-group optional-field">
+                  <label>키 (cm)</label>
+                  <input type="number" id="ctx-height" placeholder="선택">
+                </div>
+                <div class="form-group optional-field">
+                  <label>몸무게 (kg)</label>
+                  <input type="number" id="ctx-weight" placeholder="선택">
+                </div>
+                <div class="form-group optional-field">
+                  <label>BMI</label>
+                  <input type="text" id="ctx-bmi" placeholder="자동 계산" readonly>
+                </div>
+                <div class="form-group optional-field wide">
+                  <label>병력</label>
+                  <input type="text" id="ctx-history" placeholder="예: 빈혈, 자가면역질환, 수술 후 경과">
+                </div>
+
+                <!-- 치료이력 선택 -->
+                <div class="form-group optional-field wide tag-select-group">
+                  <label>치료 이력 <span class="tag-hint">(복수 선택 가능)</span></label>
+                  <div class="tag-select-row" id="ctx-treatment-tags">
+                    <button type="button" class="tag-btn" data-value="방사성요오드 치료" data-field="ctx-treatment">방사성요오드 치료</button>
+                    <button type="button" class="tag-btn" data-value="갑상선 수술(전절제)" data-field="ctx-treatment">수술 (전절제)</button>
+                    <button type="button" class="tag-btn" data-value="갑상선 수술(반절제)" data-field="ctx-treatment">수술 (반절제)</button>
+                    <button type="button" class="tag-btn" data-value="레보티록신 유지치료" data-field="ctx-treatment">레보티록신 유지치료</button>
+                    <button type="button" class="tag-btn" data-value="없음" data-field="ctx-treatment">해당 없음</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="ctx-treatment">기타 (직접 입력)</button>
+                  </div>
+                  <input type="hidden" id="ctx-treatment" value="">
+                  <div class="tag-custom-input-wrap" id="ctx-treatment-custom-wrap" style="display:none">
+                    <input type="text" id="ctx-treatment-custom" placeholder="치료 이력 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+
+                <!-- 증상 선택 -->
+                <div class="form-group optional-field wide tag-select-group">
+                  <label>증상 <span class="tag-hint">(복수 선택 가능)</span></label>
+                  <div class="tag-select-row" id="ctx-symptoms-tags">
+                    <button type="button" class="tag-btn" data-value="피로" data-field="ctx-symptoms">피로</button>
+                    <button type="button" class="tag-btn" data-value="체중 증가" data-field="ctx-symptoms">체중 증가</button>
+                    <button type="button" class="tag-btn" data-value="체중 감소" data-field="ctx-symptoms">체중 감소</button>
+                    <button type="button" class="tag-btn" data-value="심계항진" data-field="ctx-symptoms">심계항진</button>
+                    <button type="button" class="tag-btn" data-value="추위 민감" data-field="ctx-symptoms">추위 민감</button>
+                    <button type="button" class="tag-btn" data-value="열 민감" data-field="ctx-symptoms">열 민감</button>
+                    <button type="button" class="tag-btn" data-value="관절통" data-field="ctx-symptoms">관절통</button>
+                    <button type="button" class="tag-btn" data-value="우울감" data-field="ctx-symptoms">우울감</button>
+                    <button type="button" class="tag-btn" data-value="피부 건조" data-field="ctx-symptoms">피부 건조</button>
+                    <button type="button" class="tag-btn" data-value="변비" data-field="ctx-symptoms">변비</button>
+                    <button type="button" class="tag-btn" data-value="복부 팽만" data-field="ctx-symptoms">복부 팽만</button>
+                    <button type="button" class="tag-btn" data-value="안구 돌출" data-field="ctx-symptoms">안구 돌출</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="ctx-symptoms">기타 (직접 입력)</button>
+                  </div>
+                  <input type="hidden" id="ctx-symptoms" value="">
+                  <div class="tag-custom-input-wrap" id="ctx-symptoms-custom-wrap" style="display:none">
+                    <input type="text" id="ctx-symptoms-custom" placeholder="증상 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <div class="form-group optional-field wide">
+                  <label>검사 수치</label>
+                  <input type="text" id="ctx-labs" placeholder="예: TSH 4.5, Free T4 0.9">
+                </div>
+                <div class="form-group optional-field wide">
+                  <label>목표</label>
+                  <input type="text" id="ctx-goal" placeholder="예: 결핍 보충, 피로 개선, 상호작용 확인">
+                </div>
+              </div>
+            </details>
+            <details class="collapsible-panel sample-scenario-panel">
+              <summary>예시 불러오기</summary>
+              <p class="helper-text sample-scenario-intro">MVP 7종: 요오드 · 셀레늄 · 철 · 비타민D · 아연 · 마그네슘 · 프로바이오틱스</p>
+              <div class="sample-scenario-group">
+                <span class="sample-scenario-label">MVP 범위 내</span>
+                <div class="sample-scenario-row">
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H1" title="기대: personalized / conditional_consider">하시모토+셀레늄</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H2" title="기대: personalized / avoid 또는 contraindicated">그레이브스+요오드</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H3" title="기대: personalized / conditional (상호작용)">저하+철분</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H4" title="기대: personalized / conditional_consider">하시모토+비타민D</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H5" title="기대: personalized / conditional">저하+아연</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H6" title="기대: personalized / conditional">저하+마그네슘</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-H7" title="기대: personalized / conditional_consider">저하+프로바이오틱스</button>
+                  <button class="secondary-btn mini pat-sample-btn" data-case="P-G1" title="기대: general (진단/약 없음)">일반모드</button>
+                </div>
+              </div>
+              <p class="helper-text sample-scenario-hint">진단·약·rule + safety 기반 판정</p>
+              <div class="sample-scenario-group sample-scenario-group--out">
+                <span class="sample-scenario-label sample-scenario-label--out">범위 밖 · MVP 미지원 테스트</span>
+                <div class="sample-scenario-row">
+                  <button class="secondary-btn mini pat-sample-btn pat-sample-btn--out" data-case="P-F1" title="기대: MVP 범위 밖 안내 (오메가3)">오메가3</button>
+                  <button class="secondary-btn mini pat-sample-btn pat-sample-btn--out" data-case="P-F2" title="기대: MVP 범위 밖 안내 (칼슘)">칼슘</button>
+                </div>
+              </div>
+              <p class="helper-text sample-scenario-hint">POST-MVP 성분 — 범위 안내·전문의 상담 유도 확인용</p>
+              <div class="sample-scenario-row sample-scenario-row--actions">
+                <button class="secondary-btn mini pat-sample-clear" title="모든 입력 초기화">초기화</button>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Doctor View -->
+      <section id="doctor-view" class="view-section">
+        <header>
+          <div class="header-with-action">
+            <div>
+              <h1><span class="page-mark">🦋</span> 갑상선 영양제 의사결정 지원</h1>
+              <p>임상 가이드라인과 PubMed 근거 기반의 정밀 의사결정 지원 도구입니다.</p>
+              <p class="scope-note">초기 분석 범위는 Hashimoto thyroiditis, hypothyroidism, Graves' disease, hyperthyroidism 중심입니다. 시스템은 추천보다 근거, 위험, 규제 정보를 우선 제시합니다.</p>
+            </div>
+            <div id="doctor-profile-badge" class="profile-badge">
+              <span id="badge-specialty">전문의</span> | <span id="badge-name">의사</span>
+            </div>
+          </div>
+        </header>
+
+
+        <div class="content-body split-view doctor-split">
+          <!-- Form side -->
+          <div class="form-container doctor-form-scroll">
+            <div class="glass-panel form-card">
+              <p class="section-kicker">임상 질문</p>
+              <h3>임상 질문 및 대상</h3>
+              <div class="form-group">
+                <label>임상적 의문 사항 (Clinical Query)</label>
+                <textarea id="doc-message" class="clinical-query-input" placeholder="예: 하시모토 환자에게 비타민D 보충이 TPO 항체 수치 감소에 기여하는가?" rows="6"></textarea>
+              </div>
+              <!-- 영양제 선택 (의사용 드롭다운) -->
+              <div class="form-group tag-dropdown-group" id="doc-supplement-dg">
+                <label>검토 대상 영양제/성분</label>
+                <div class="tag-dropdown-trigger" data-dg="doc-supplement-dg">
+                  <span class="tag-dropdown-display" id="doc-supplement-display">클릭하여 선택…</span>
+                  <span class="tag-dropdown-arrow">▾</span>
+                </div>
+                <div class="tag-dropdown-panel" id="doc-supplement-panel" style="display:none">
+                  <div class="tag-select-row" id="doc-supplement-tags">
+                    <button type="button" class="tag-btn" data-value="iodine" data-field="doc-supplement">요오드</button>
+                    <button type="button" class="tag-btn" data-value="selenium" data-field="doc-supplement">셀레늄</button>
+                    <button type="button" class="tag-btn" data-value="iron" data-field="doc-supplement">철분</button>
+                    <button type="button" class="tag-btn" data-value="vitamin_d" data-field="doc-supplement">비타민D</button>
+                    <button type="button" class="tag-btn" data-value="zinc" data-field="doc-supplement">아연</button>
+                    <button type="button" class="tag-btn" data-value="magnesium" data-field="doc-supplement">마그네슘</button>
+                    <button type="button" class="tag-btn" data-value="probiotics" data-field="doc-supplement">프로바이오틱스</button>
+                    <button type="button" class="tag-btn tag-btn--out" data-value="__other__" data-field="doc-supplement">범위 밖 (직접 입력)</button>
+                  </div>
+                  <div class="tag-custom-input-wrap" id="doc-supplement-custom-wrap" style="display:none">
+                    <input type="text" id="doc-supplement-custom" placeholder="성분명 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <input type="hidden" id="doc-supplement" value="">
+              </div>
+            </div>
+
+            <div class="glass-panel form-card">
+              <p class="section-kicker">환자 정보</p>
+              <h3>환자 기본 정보</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>나이</label>
+                  <input type="number" id="doc-age" placeholder="세">
+                </div>
+                <div class="form-group">
+                  <label>성별</label>
+                  <select id="doc-sex">
+                    <option value="female">여성</option>
+                    <option value="male">남성</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>키 (cm)</label>
+                  <input type="number" id="doc-height" placeholder="cm">
+                </div>
+                <div class="form-group">
+                  <label>몸무게 (kg)</label>
+                  <input type="number" id="doc-weight" placeholder="kg">
+                </div>
+                <div class="form-group">
+                  <label>BMI</label>
+                  <input type="text" id="doc-bmi" placeholder="자동 계산" readonly>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel form-card">
+              <p class="section-kicker">임상 데이터</p>
+              <h3>임상 데이터</h3>
+
+              <!-- 진단명 (의사용 드롭다운) -->
+              <div class="form-group tag-dropdown-group" id="doc-conditions-dg">
+                <label>진단명 및 동반 질환</label>
+                <div class="tag-dropdown-trigger" data-dg="doc-conditions-dg">
+                  <span class="tag-dropdown-display" id="doc-conditions-display">클릭하여 선택…</span>
+                  <span class="tag-dropdown-arrow">▾</span>
+                </div>
+                <div class="tag-dropdown-panel" id="doc-conditions-panel" style="display:none">
+                  <div class="tag-select-row" id="doc-conditions-tags">
+                    <button type="button" class="tag-btn" data-value="하시모토 갑상선염" data-field="doc-conditions">하시모토 갑상선염</button>
+                    <button type="button" class="tag-btn" data-value="갑상선기능저하증" data-field="doc-conditions">갑상선기능저하증</button>
+                    <button type="button" class="tag-btn" data-value="그레이브스병" data-field="doc-conditions">그레이브스병</button>
+                    <button type="button" class="tag-btn" data-value="갑상선기능항진증" data-field="doc-conditions">갑상선기능항진증</button>
+                    <button type="button" class="tag-btn" data-value="빈혈" data-field="doc-conditions">빈혈</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="doc-conditions">기타 (직접 입력)</button>
+                  </div>
+                  <div class="tag-custom-input-wrap" id="doc-conditions-custom-wrap" style="display:none">
+                    <input type="text" id="doc-conditions-custom" placeholder="진단명 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <input type="hidden" id="doc-conditions" value="">
+              </div>
+
+              <!-- 복용약 (의사용 드롭다운) -->
+              <div class="form-group tag-dropdown-group" id="doc-medications-dg">
+                <label>현재 복용 중인 약물</label>
+                <div class="tag-dropdown-trigger" data-dg="doc-medications-dg">
+                  <span class="tag-dropdown-display" id="doc-medications-display">클릭하여 선택…</span>
+                  <span class="tag-dropdown-arrow">▾</span>
+                </div>
+                <div class="tag-dropdown-panel" id="doc-medications-panel" style="display:none">
+                  <div class="tag-select-row" id="doc-medications-tags">
+                    <button type="button" class="tag-btn" data-value="레보티록신" data-field="doc-medications">레보티록신</button>
+                    <button type="button" class="tag-btn" data-value="메티마졸" data-field="doc-medications">메티마졸</button>
+                    <button type="button" class="tag-btn" data-value="프로필티오우라실" data-field="doc-medications">프로필티오우라실</button>
+                    <button type="button" class="tag-btn" data-value="리오티로닌" data-field="doc-medications">리오티로닌</button>
+                    <button type="button" class="tag-btn" data-value="없음" data-field="doc-medications">복용약 없음</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="doc-medications">기타 (직접 입력)</button>
+                  </div>
+                  <div class="tag-custom-input-wrap" id="doc-medications-custom-wrap" style="display:none">
+                    <input type="text" id="doc-medications-custom" placeholder="약물명 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <input type="hidden" id="doc-medications" value="">
+              </div>
+
+              <!-- 치료이력 (의사용 드롭다운) -->
+              <div class="form-group tag-dropdown-group" id="doc-treatment-history-dg">
+                <label>치료 내용 / 수술력</label>
+                <div class="tag-dropdown-trigger" data-dg="doc-treatment-history-dg">
+                  <span class="tag-dropdown-display" id="doc-treatment-history-display">클릭하여 선택…</span>
+                  <span class="tag-dropdown-arrow">▾</span>
+                </div>
+                <div class="tag-dropdown-panel" id="doc-treatment-history-panel" style="display:none">
+                  <div class="tag-select-row" id="doc-treatment-history-tags">
+                    <button type="button" class="tag-btn" data-value="방사성요오드 치료" data-field="doc-treatment-history">방사성요오드 치료</button>
+                    <button type="button" class="tag-btn" data-value="갑상선 수술(전절제)" data-field="doc-treatment-history">수술 (전절제)</button>
+                    <button type="button" class="tag-btn" data-value="갑상선 수술(반절제)" data-field="doc-treatment-history">수술 (반절제)</button>
+                    <button type="button" class="tag-btn" data-value="레보티록신 유지치료" data-field="doc-treatment-history">레보티록신 유지치료</button>
+                    <button type="button" class="tag-btn" data-value="없음" data-field="doc-treatment-history">해당 없음</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="doc-treatment-history">기타 (직접 입력)</button>
+                  </div>
+                  <div class="tag-custom-input-wrap" id="doc-treatment-history-custom-wrap" style="display:none">
+                    <input type="text" id="doc-treatment-history-custom" placeholder="치료 이력 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <input type="hidden" id="doc-treatment-history" value="">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>TSH (mIU/L)</label>
+                  <input type="number" id="doc-lab-tsh" step="0.1" placeholder="8.5">
+                </div>
+                <div class="form-group">
+                  <label>Free T4 (ng/dL)</label>
+                  <input type="number" id="doc-lab-ft4" step="0.1" placeholder="0.6">
+                </div>
+              </div>
+
+              <!-- 증상 (의사용 드롭다운) -->
+              <div class="form-group tag-dropdown-group" id="doc-symptoms-diet-dg">
+                <label>주요 증상</label>
+                <div class="tag-dropdown-trigger" data-dg="doc-symptoms-diet-dg">
+                  <span class="tag-dropdown-display" id="doc-symptoms-diet-display">클릭하여 선택…</span>
+                  <span class="tag-dropdown-arrow">▾</span>
+                </div>
+                <div class="tag-dropdown-panel" id="doc-symptoms-diet-panel" style="display:none">
+                  <div class="tag-select-row" id="doc-symptoms-diet-tags">
+                    <button type="button" class="tag-btn" data-value="피로" data-field="doc-symptoms-diet">피로</button>
+                    <button type="button" class="tag-btn" data-value="체중 증가" data-field="doc-symptoms-diet">체중 증가</button>
+                    <button type="button" class="tag-btn" data-value="체중 감소" data-field="doc-symptoms-diet">체중 감소</button>
+                    <button type="button" class="tag-btn" data-value="심계항진" data-field="doc-symptoms-diet">심계항진</button>
+                    <button type="button" class="tag-btn" data-value="추위 민감" data-field="doc-symptoms-diet">추위 민감</button>
+                    <button type="button" class="tag-btn" data-value="열 민감" data-field="doc-symptoms-diet">열 민감</button>
+                    <button type="button" class="tag-btn" data-value="관절통" data-field="doc-symptoms-diet">관절통</button>
+                    <button type="button" class="tag-btn" data-value="안구 돌출" data-field="doc-symptoms-diet">안구 돌출</button>
+                    <button type="button" class="tag-btn" data-value="피부 건조" data-field="doc-symptoms-diet">피부 건조</button>
+                    <button type="button" class="tag-btn" data-value="변비" data-field="doc-symptoms-diet">변비</button>
+                    <button type="button" class="tag-btn" data-value="복부 팽만" data-field="doc-symptoms-diet">복부 팽만</button>
+                    <button type="button" class="tag-btn tag-btn--other" data-value="__other__" data-field="doc-symptoms-diet">기타 (직접 입력)</button>
+                  </div>
+                  <div class="tag-custom-input-wrap" id="doc-symptoms-diet-custom-wrap" style="display:none">
+                    <input type="text" id="doc-symptoms-diet-custom" placeholder="증상 또는 식습관 직접 입력" class="tag-custom-input">
+                  </div>
+                </div>
+                <input type="hidden" id="doc-symptoms-diet" value="">
+              </div>
+            </div>
+
+            <div class="glass-panel form-card search-settings-card">
+              <p class="section-kicker">검색 설정</p>
+              <h3>검색 설정</h3>
+              <div class="form-group">
+                <label for="doc-search-focus">검색 초점</label>
+                <select id="doc-search-focus">
+                  <option value="auto" selected>자동 (메시지에서 추론)</option>
+                  <option value="general">일반 / 근거</option>
+                  <option value="interaction">상호작용 · 흡수</option>
+                  <option value="dosage">용량</option>
+                  <option value="monitoring">모니터링</option>
+                </select>
+                <p class="helper-text">자동: 메시지 키워드로 추론합니다.</p>
+              </div>
+              <label class="toggle-row">
+                <input type="checkbox" id="enhanced-search-toggle">
+                <span>고급 검색 (LLM 재랭킹 · 논문 확장)</span>
+              </label>
+              <p class="helper-text">응답 시간이 증가할 수 있습니다.</p>
+              <details class="collapsible-panel sample-scenario-panel doctor-helper-panel">
+                <summary>예시 불러오기</summary>
+                <p class="helper-text sample-scenario-intro">MVP 7종: 요오드 · 셀레늄 · 철 · 비타민D · 아연 · 마그네슘 · 프로바이오틱스</p>
+                <div class="sample-scenario-group">
+                  <span class="sample-scenario-label">MVP 범위 내</span>
+                  <div class="sample-scenario-row">
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H1" title="요오드 · Graves · general">요오드 주의</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H2" title="셀레늄 · Hashimoto · general">셀레늄 근거</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H3" title="철분 · levo 상호작용">철분 상호작용</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H4" title="아연 · levo 상호작용">아연 병용</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H5" title="비타민D · dosage focus">비타민D 결핍</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H6" title="마그네슘 · interaction focus">마그네슘 간격</button>
+                    <button class="secondary-btn mini doc-sample-btn" data-case="D-H7" title="프로바이오틱스 · general">프로바이오틱스</button>
+                  </div>
+                </div>
+                <p class="helper-text sample-scenario-hint">rule + PubMed + MFDS 규제 정보</p>
+                <div class="sample-scenario-group sample-scenario-group--out">
+                  <span class="sample-scenario-label sample-scenario-label--out">범위 밖 · MVP 미지원 테스트</span>
+                  <div class="sample-scenario-row">
+                    <button class="secondary-btn mini doc-sample-btn doc-sample-btn--out" data-case="D-F1" title="기대: MVP 범위 밖 (아슈와간다)">아슈와간다</button>
+                    <button class="secondary-btn mini doc-sample-btn doc-sample-btn--out" data-case="D-F2" title="기대: MVP 범위 밖 (오메가3)">오메가3</button>
+                  </div>
+                </div>
+                <p class="helper-text sample-scenario-hint">POST-MVP 성분 — 범위 안내·PubMed fallback 확인용</p>
+              </details>
+            </div>
+            <button id="doctor-btn" class="primary-btn full-btn">갑상선 임상 판정 실행</button>
+          </div>
+
+          <!-- Result side -->
+          <div class="result-container doctor-result-column">
+            <div class="glass-panel result-card">
+              <div class="result-card-head">
+                <div>
+                  <p class="section-kicker">결과</p>
+                  <h3>심층 분석 결과 (Evidence-based Report)</h3>
+                </div>
+                <div id="doctor-result-toolbar" class="result-toolbar initially-hidden">
+                  <button type="button" id="doctor-copy-btn" class="secondary-btn mini">복사</button>
+                  <button type="button" id="doctor-print-btn" class="secondary-btn mini">인쇄</button>
+                </div>
+              </div>
+              <div id="doctor-output" class="result-output" aria-live="polite" aria-relevant="additions text">
+                <p class="placeholder-text">환자 데이터를 입력하고 분석 실행 버튼을 눌러주세요...</p>
+              </div>
+            </div>
+            <div id="case-feedback-container" class="glass-panel case-feedback-block hidden" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profile View -->
+      <section id="profile-view" class="view-section">
+        <header>
+          <h1>내 프로필 설정</h1>
+          <p id="profile-subtitle">프로필을 설정하면 더 정확한 분석이 가능합니다.</p>
+        </header>
+        <div class="content-body">
+
+          <!-- 환자 프로필 -->
+          <div id="patient-profile-panel" class="glass-panel profile-form initially-hidden">
+            <h3 class="profile-form-title">환자 프로필</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>이름</label>
+                <input type="text" id="pat-name" placeholder="이름">
+              </div>
+              <div class="form-group">
+                <label>나이</label>
+                <input type="number" id="pat-age" placeholder="세">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>성별</label>
+              <select id="pat-sex">
+                <option value="female">여성</option>
+                <option value="male">남성</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>갑상선 진단명</label>
+              <input type="text" id="pat-conditions" placeholder="예: 하시모토 갑상선염, 갑상선기능저하증">
+            </div>
+            <div class="form-group">
+              <label>복용 중인 약물</label>
+              <input type="text" id="pat-medications" placeholder="예: 레보티록신, 메티마졸">
+            </div>
+            <div class="form-group">
+              <label>현재 복용 중인 영양제</label>
+              <input type="text" id="pat-supplements" placeholder="예: 셀레늄, 비타민D">
+            </div>
+            <div class="form-group">
+              <label>의학 이해도</label>
+              <select id="pat-literacy">
+                <option value="beginner">초보자 - 쉬운 설명 선호</option>
+                <option value="general" selected>일반인 - 일반적인 설명</option>
+                <option value="expert">전문가 - 전문 용어 포함</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>영양제 선호 성향</label>
+              <select id="pat-preference">
+                <option value="active">적극형 - 적극적으로 시도</option>
+                <option value="moderate" selected>신중형 - 근거 확인 후 시도</option>
+                <option value="conservative">보수형 - 검증된 것만</option>
+              </select>
+            </div>
+            <button id="save-patient-profile-btn" class="primary-btn">프로필 저장</button>
+          </div>
+
+          <!-- 의사 프로필 -->
+          <div id="doctor-profile-panel" class="glass-panel profile-form initially-hidden">
+            <h3 class="profile-form-title compact">의사 판정 성향 설정</h3>
+            <p class="profile-helper-text">의사 성향은 응답 톤, 경고 문구 강도, 근거 제시 방식에 참고됩니다. 안전성 경고가 있는 경우 이를 완화하지 않습니다.</p>
+            <div class="form-group">
+              <label>영양제 보충에 대한 태도</label>
+              <select id="prof-attitude">
+                <option value="positive">적극적 - 근거가 있다면 가능성을 더 적극적으로 설명</option>
+                <option value="neutral" selected>중립적 - 가이드라인에 충실</option>
+                <option value="cautious">신중함 - 충분한 근거 전까지 보류</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>임상 위험 수용도</label>
+              <select id="prof-risk">
+                <option value="moderate" selected>보통</option>
+                <option value="conservative">보수적 - 안전성 최우선</option>
+                <option value="aggressive">적극적 - 잠재적 이익 중시</option>
+              </select>
+            </div>
+            <button id="save-profile-btn" class="primary-btn">설정 저장하기</button>
+          </div>
+
+          <div id="profile-login-hint" class="glass-panel centered-hint">
+            로그인 후 프로필을 설정할 수 있습니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback View (2번: 일반 피드백) -->
+      <section id="feedback-view" class="view-section">
+        <header>
+          <h1>피드백 주기</h1>
+          <p>상담 답변과 관계없이 시스템 전반(규칙, PubMed, UI 등)에 대한 의견을 남겨주세요.</p>
+        </header>
+        <div class="content-body">
+          <div class="glass-panel form-card narrow-form-card">
+            <div class="form-group">
+              <label>카테고리</label>
+              <select id="general-feedback-category">
+                <option value="rule">판정 규칙</option>
+                <option value="pubmed">PubMed 근거</option>
+                <option value="ui">UI/UX</option>
+                <option value="other" selected>기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>내용</label>
+              <textarea id="general-feedback-message" rows="5" placeholder="시스템 전반에 대한 의견, 제안, 오류 등을 자유롭게 작성해 주세요."></textarea>
+            </div>
+            <button id="general-feedback-submit-btn" class="primary-btn">전송</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Feedback View (3/4번) -->
+      <section id="my-feedback-view" class="view-section">
+        <header>
+          <h1>내 피드백</h1>
+          <p>제출한 피드백 목록과 팀 답변을 확인합니다.</p>
+        </header>
+        <div class="content-body">
+          <div class="feedback-tabs">
+            <button class="secondary-btn mini active-tab" id="fb-tab-cases" onclick="switchFeedbackTab('cases')">케이스 피드백</button>
+            <button class="secondary-btn mini" id="fb-tab-general" onclick="switchFeedbackTab('general')">일반 피드백</button>
+          </div>
+          <div id="my-feedback-list" aria-live="polite" aria-relevant="additions text">
+            <p class="dim-text">로드 중...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics View -->
+      <section id="analytics-view" class="view-section">
+        <header>
+          <h1>연구 및 통계 분석</h1>
+          <p>의사 결정 일관성 및 영양제 상호작용 로그 요약 데이터입니다.</p>
+        </header>
+        <div class="content-body">
+          <div class="analytics-actions">
+            <button id="analytics-btn" class="primary-btn">데이터 새로고침</button>
+          </div>
+          <div class="analytics-grid">
+            <div class="glass-panel stat-card">
+              <h3>총 의사결정 건수</h3>
+              <div class="stat-value" id="stat-total">-</div>
+            </div>
+            <div class="glass-panel stat-card chart-container">
+              <h3>영양제별 분포</h3>
+              <div id="stat-supplements" class="analytics-render">데이터 없음</div>
+            </div>
+            <div class="glass-panel stat-card chart-container">
+              <h3>의사 간 결정 변동성</h3>
+              <div id="stat-physician" class="analytics-render">데이터 없음</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="disclaimer-bar">
+    ⚠️ 본 서비스는 의료 진단·처방을 대체하지 않습니다. 제공되는 정보는 참고용이며, 복용 전 반드시 전문의와 상담하시기 바랍니다.
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+
+</html>

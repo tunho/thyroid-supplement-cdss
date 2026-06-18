@@ -1,0 +1,390 @@
+[
+  {
+    "rule_id": "iodine_excess_hyperthyroid",
+    "supplement_canonical": "iodine",
+    "trigger": {"diagnosis_any": ["graves_disease", "hyperthyroidism", "active_hyperthyroidism", "autonomous_thyroid_nodule", "graves"]},
+    "severity": "WARNING",
+    "category": "iodine_excess",
+    "message_patient": "갑상선기능항진증/그레이브스 환자에서 건강 목적의 요오드 보충은 갑상선 중독증을 악화시킬 수 있어 피해야 합니다. (수술 준비·갑상선폭풍 등 치료 목적 요오드 제제는 의사 처방 하 예외)",
+    "message_doctor":  "갑상선기능항진증/그레이브스 환자에서 건강 목적의 요오드 보충은 갑상선 중독증을 악화시킬 수 있어 회피. 단 요오드 제제(KI)는 수술 준비·갑상선폭풍 등 처방 하 치료 목적 예외 (ATA 2016).",
+    "recommended_action_patient": "건강 목적 요오드 보충은 피하시고, 요오드 제제가 필요한 경우 전문의 처방 하에서만 사용하세요.",
+    "recommended_action_doctor":  "건강 목적 요오드 보충 회피. 임상적으로 요오드 제제가 필요하면 처방 하 사용."
+  },
+  {
+    "rule_id": "iodine_excess_hashimoto",
+    "supplement_canonical": "iodine",
+    "trigger": {"diagnosis_any": ["hashimoto", "autoimmune_thyroiditis"]},
+    "severity": "WARNING",
+    "category": "iodine_excess",
+    "message_patient": "하시모토 갑상선염 환자에서 과량의 요오드는 갑상선 기능을 더 악화시킬 수 있습니다.",
+    "message_doctor":  "하시모토 갑상선염 환자에서 과량의 요오드는 갑상선 기능을 더 악화시킬 수 있습니다.",
+    "recommended_action_patient": "요오드 섭취량을 일일 권장량(150µg) 이내로 제한하고 전문의 상담을 권고합니다.",
+    "recommended_action_doctor":  "요오드 섭취량을 일일 권장량(150µg) 이내로 제한하고 전문의 상담을 권고합니다."
+  },
+  {
+    "rule_id": "selenium_toxicity_history",
+    "supplement_canonical": "selenium",
+    "trigger": {"any_of": [{"rule_risk_tags_any": ["selenium_toxicity"]}, {"diagnosis_any": ["selenium_toxicity_history"]}]},
+    "severity": "WARNING",
+    "category": "selenium_toxicity",
+    "message_patient": "셀레늄을 과다 복용한 이력이 있어 주의가 필요합니다. 갑상선 보조 목적 연구에서는 보통 100–200µg/일을 사용하고, 공식 상한섭취량은 400µg/일입니다(NIH ODS·KDRI 2025). 다른 음식·영양제까지 합한 총 섭취량을 확인하고, 탈모·손톱 변형·소화기 증상이 있으면 전문가와 상담하세요.",
+    "message_doctor":  "셀레늄 독성 이력/위험. 갑상선 보조요법 연구 관행 100–200µg/일은 보수적 운용상한이며 독성 역치가 아님 — 공식 UL 400µg/일(NIH ODS·KDRI 2025). 식이+보충 총 섭취량 합산 확인 및 selenosis(탈모·손톱 변형·소화기·호기 마늘냄새) 모니터링.",
+    "recommended_action_patient": "다른 급원을 포함한 총 셀레늄 섭취량을 점검하시기 바랍니다.",
+    "recommended_action_doctor":  "식이+보충 총 셀레늄 섭취량 합산 점검 및 혈중 셀레늄·selenosis 징후 모니터링."
+  },
+  {
+    "rule_id": "selenium_dose_caution_default",
+    "supplement_canonical": "selenium",
+    "trigger": {},
+    "severity": "CAUTION",
+    "category": "selenium_toxicity",
+    "message_patient": "갑상선 보조 목적의 셀레늄은 연구에서 보통 100–200µg/일을 사용합니다. 200µg/일은 독성 기준선이 아니라 보수적으로 권하는 상한이고, 공식 상한섭취량은 400µg/일입니다(NIH ODS·KDRI 2025).",
+    "message_doctor":  "셀레늄 갑상선 보조요법 연구 관행 100–200µg/일. 200µg/일은 독성 역치가 아닌 보수적 운용상한 — 공식 UL 400µg/일(NIH ODS·KDRI 2025). 좁은 치료지수 고려해 200µg/일 초과·장기 복용 시 총 섭취량 확인.",
+    "recommended_action_patient": "다른 셀레늄 급원을 포함한 총 섭취량을 확인하시기 바랍니다.",
+    "recommended_action_doctor":  "식이+보충 총 섭취량 확인; 장기·고용량 시 selenosis 징후 모니터링."
+  },
+  {
+    "rule_id": "herb_thyrotoxicosis_default",
+    "trigger": {"supplement_canonical_any": ["kelp", "bladderwrack", "guggul", "forskohlii"]},
+    "severity": "WARNING",
+    "category": "herb_thyrotoxicosis",
+    "message_patient": "{supplement_name}은(는) 갑상선 기능에 영향을 줄 수 있는 생약 성분입니다. 갑상선 질환 환자에서 주의가 필요합니다.",
+    "message_doctor":  "{supplement_name}은(는) 갑상선 기능에 영향을 줄 수 있는 생약 성분입니다. 갑상선 질환 환자에서 주의가 필요합니다.",
+    "recommended_action_patient": "복용 전 전문의 상담을 받고, 갑상선 기능 검사를 정기적으로 시행하시기 바랍니다.",
+    "recommended_action_doctor":  "복용 전 전문의 상담을 받고, 갑상선 기능 검사를 정기적으로 시행하시기 바랍니다."
+  },
+  {
+    "rule_id": "pregnancy_lactation_caution",
+    "trigger": {"risk_factor_any": ["pregnancy", "pregnant", "임신", "lactation", "breastfeeding", "수유"]},
+    "severity": "WARNING",
+    "category": "pregnancy_lactation",
+    "message_patient": "임신/수유 중 영양제 복용은 태아 및 신생아에 대한 안전성 확인이 필요합니다.",
+    "message_doctor":  "임신/수유 중 영양제 복용은 태아 및 신생아에 대한 안전성 확인이 필요합니다.",
+    "recommended_action_patient": "산부인과 전문의와 상담 후 복용 여부를 결정하시기 바랍니다.",
+    "recommended_action_doctor":  "산부인과 전문의와 상담 후 복용 여부를 결정하시기 바랍니다."
+  },
+  {
+    "rule_id": "pediatric_age_caution",
+    "trigger": {"age_lt": 18},
+    "severity": "CAUTION",
+    "category": "pediatric_caution",
+    "message_patient": "소아 환자에서 영양제 용량 조절 및 안전성 데이터가 성인과 다를 수 있습니다.",
+    "message_doctor":  "소아 환자에서 영양제 용량 조절 및 안전성 데이터가 성인과 다를 수 있습니다.",
+    "recommended_action_patient": "소아 전문의와 상의하여 적절한 용량을 결정하시기 바랍니다.",
+    "recommended_action_doctor":  "소아 전문의와 상의하여 적절한 용량을 결정하시기 바랍니다."
+  },
+  {
+    "rule_id": "elderly_age_caution",
+    "trigger": {"age_gte": 65},
+    "severity": "CAUTION",
+    "category": "elderly_caution",
+    "message_patient": "고령 환자에서 신기능/간기능 변화에 따른 용량 조절이 필요할 수 있습니다.",
+    "message_doctor":  "고령 환자에서 신기능/간기능 변화에 따른 용량 조절이 필요할 수 있습니다.",
+    "recommended_action_patient": "신기능 및 간기능을 고려하여 전문의와 용량을 재조정하시기 바랍니다.",
+    "recommended_action_doctor":  "신기능 및 간기능을 고려하여 전문의와 용량을 재조정하시기 바랍니다."
+  },
+  {
+    "rule_id": "pediatric_flag_caution",
+    "trigger": {"risk_factor_any": ["pediatric", "소아", "child"]},
+    "dedup_category": "pediatric_caution",
+    "severity": "CAUTION",
+    "category": "pediatric_caution",
+    "message_patient": "소아 환자에서 영양제 안전성은 별도 확인이 필요합니다.",
+    "message_doctor":  "소아 환자에서 영양제 안전성은 별도 확인이 필요합니다.",
+    "recommended_action_patient": "소아 전문의와 상의하시기 바랍니다.",
+    "recommended_action_doctor":  "소아 전문의와 상의하시기 바랍니다."
+  },
+  {
+    "rule_id": "elderly_flag_caution",
+    "trigger": {"risk_factor_any": ["elderly", "고령", "노인"]},
+    "dedup_category": "elderly_caution",
+    "severity": "CAUTION",
+    "category": "elderly_caution",
+    "message_patient": "고령 환자에서 대사 변화를 고려한 용량 조절이 필요합니다.",
+    "message_doctor":  "고령 환자에서 대사 변화를 고려한 용량 조절이 필요합니다.",
+    "recommended_action_patient": "전문의와 용량을 재조정하시기 바랍니다.",
+    "recommended_action_doctor":  "전문의와 용량을 재조정하시기 바랍니다."
+  },
+  {
+    "rule_id": "levothyroxine_mineral_interaction",
+    "trigger": {
+      "supplement_canonical_any": ["iron", "zinc", "calcium", "magnesium"],
+      "medication_keywords_any": ["levothyroxine", "레보티록신", "씬지로이드", "신지로이드", "씬지", "levothroid", "synthroid"]
+    },
+    "severity": "WARNING",
+    "category": "levothyroxine_interaction",
+    "message_patient": "{supplement_name}은(는) 갑상선 호르몬제 흡수에 영향을 줄 수 있습니다. 갑상선 호르몬제는 보통 공복에 복용하고 다른 약·영양제와 간격을 두는 것이 중요합니다.",
+    "message_doctor":  "{supplement_name}({supplement_canonical})은(는) levothyroxine 흡수 저해 가능성이 있는 미네랄입니다. 철분/칼슘/마그네슘/아연 등은 levothyroxine 흡수를 감소시킬 수 있어 별도 간격 조정이 필요할 수 있습니다.",
+    "recommended_action_patient": "담당의 또는 약사와 복용 간격 및 일정을 확인하세요.",
+    "recommended_action_doctor":  "levothyroxine 복용 후 최소 4시간 간격을 권고합니다. 복용 일정 조정을 처방 시 안내하시기 바랍니다."
+  },
+  {
+    "rule_id": "levothyroxine_timing_risk_tag",
+    "trigger": {
+      "rule_risk_tags_any": ["levothyroxine_timing"],
+      "medication_keywords_any": ["levothyroxine", "레보티록신", "씬지로이드", "신지로이드", "씬지", "levothroid", "synthroid"]
+    },
+    "dedup_category": "levothyroxine_interaction",
+    "severity": "CAUTION",
+    "category": "levothyroxine_interaction",
+    "message_patient": "{supplement_name}은(는) 갑상선 호르몬제와 함께 복용 시 간격을 두는 것이 중요합니다.",
+    "message_doctor":  "{supplement_name}은(는) levothyroxine과 흡수 상호작용 가능성이 있습니다. 복용 간격 조정을 확인하세요.",
+    "recommended_action_patient": "담당의 또는 약사와 복용 간격을 확인하세요.",
+    "recommended_action_doctor":  "처방 시 levothyroxine 복용 일정과 간격 조정을 안내하시기 바랍니다."
+  },
+  {
+    "rule_id": "tsh_suppressed_bone_risk",
+    "trigger": {
+      "supplement_canonical_any": ["calcium", "vitamin_d", "magnesium"],
+      "medication_keywords_any": ["levothyroxine", "레보티록신", "씬지로이드", "신지로이드", "씬지", "levothroid", "synthroid"],
+      "lab_lt": {"TSH": 0.4}
+    },
+    "severity": "WARNING",
+    "category": "tsh_suppressed_bone_risk",
+    "message_template_patient": "TSH {lab.TSH} mIU/L — 정상 범위 하한(0.4) 미만의 억제 범위입니다. 갑상선암 수술 후 TSH 억제 요법이 의도된 치료 목표라면 골밀도 모니터링이 특히 중요하며, 의도된 목표가 아니라면, 칼슘 보충 여부와 별개로 TSH 억제 목표와 레보티록신 용량 적절성을 먼저 함께 평가해야 합니다.",
+    "message_template_doctor":  "TSH {lab.TSH} mIU/L — 정상 범위 하한(0.4) 미만의 억제 범위입니다. 갑상선암 수술 후 TSH 억제 요법이 의도된 치료 목표라면 골밀도 모니터링이 특히 중요하며, 의도된 목표가 아니라면, 칼슘 보충 여부와 별개로 TSH 억제 목표와 레보티록신 용량 적절성을 먼저 함께 평가해야 합니다.",
+    "recommended_action_patient": "주치의를 통해 현재 TSH가 의도된 치료 목표 범위인지 확인하고 골밀도 관리 계획을 함께 수립하시기 바랍니다.",
+    "recommended_action_doctor":  "주치의를 통해 현재 TSH가 의도된 치료 목표 범위인지 확인하고 골밀도 관리 계획을 함께 수립하시기 바랍니다."
+  },
+  {
+    "rule_id": "antithyroid_drug_iodine",
+    "supplement_canonical": "iodine",
+    "trigger": {"medication_any": ["methimazole", "메티마졸", "carbimazole", "카비마졸", "propylthiouracil", "ptu", "프로필티오유라실"]},
+    "severity": "WARNING",
+    "category": "antithyroid_drug_interaction",
+    "message_patient": "항갑상선제 복용 중 요오드 보충은 약물 효과에 영향을 줄 수 있습니다.",
+    "message_doctor":  "항갑상선제 복용 중 요오드 보충은 약물 효과에 영향을 줄 수 있습니다.",
+    "recommended_action_patient": "항갑상선제 처방의와 상담 후 요오드 보충 여부를 결정하시기 바랍니다.",
+    "recommended_action_doctor":  "항갑상선제 처방의와 상담 후 요오드 보충 여부를 결정하시기 바랍니다."
+  },
+  {
+    "rule_id": "antithyroid_drug_other",
+    "trigger": {
+      "medication_any": ["methimazole", "메티마졸", "carbimazole", "카비마졸", "propylthiouracil", "ptu", "프로필티오유라실"],
+      "supplement_canonical_not": "iodine"
+    },
+    "severity": "CAUTION",
+    "category": "antithyroid_drug_caution",
+    "message_patient": "항갑상선제 복용 중 영양제 추가 시 약물 대사 및 상호작용을 확인하시기 바랍니다.",
+    "message_doctor":  "항갑상선제 복용 중 영양제 추가 시 약물 대사 및 상호작용을 확인하시기 바랍니다.",
+    "recommended_action_patient": "처방의에게 영양제 복용 사실을 알리시기 바랍니다.",
+    "recommended_action_doctor":  "처방의에게 영양제 복용 사실을 알리시기 바랍니다."
+  },
+  {
+    "rule_id": "insufficient_evidence_no_rule",
+    "trigger": {"rule_none": true},
+    "severity": "CAUTION",
+    "category": "insufficient_evidence",
+    "message_patient": "{supplement_name}에 대한 갑상선 질환 관련 근거가 충분하지 않습니다.",
+    "message_doctor":  "{supplement_name}에 대한 갑상선 질환 관련 근거가 충분하지 않습니다.",
+    "recommended_action_patient": "근거가 축적될 때까지 보수적으로 접근하고 전문의 상담을 권고합니다.",
+    "recommended_action_doctor":  "근거가 축적될 때까지 보수적으로 접근하고 전문의 상담을 권고합니다."
+  },
+  {
+    "rule_id": "limited_evidence_low_level",
+    "trigger": {"rule_evidence_level_in": ["mechanistic", "insufficient"]},
+    "severity": "INFO",
+    "category": "limited_evidence",
+    "message_patient": "{supplement_name}의 갑상선 질환에 대한 직접 임상 근거가 제한적입니다.",
+    "message_doctor":  "{supplement_name}의 갑상선 질환에 대한 직접 임상 근거가 제한적입니다.",
+    "recommended_action_patient": "근거 수준이 낮으므로 과도한 기대 없이 보수적으로 사용을 판단하시기 바랍니다.",
+    "recommended_action_doctor":  "근거 수준이 낮으므로 과도한 기대 없이 보수적으로 사용을 판단하시기 바랍니다."
+  },
+  {
+    "rule_id": "multivitamin_iodine_caution",
+    "supplement_canonical": "multivitamin",
+    "trigger": {},
+    "severity": "CAUTION",
+    "category": "iodine_caution",
+    "message_patient": "종합비타민 제품에는 갑상선 호르몬 수치에 영향을 줄 수 있는 요오드가 포함된 경우가 많습니다.",
+    "message_doctor":  "종합비타민 제품에는 갑상선 호르몬 수치에 영향을 줄 수 있는 요오드가 포함된 경우가 많습니다.",
+    "recommended_action_patient": "반드시 제품 라벨을 확인하여 무요오드(Iodine-free) 제품을 고르거나 주치의와 상담하십시오. 칼슘/철분이 포함되어 있다면 갑상선 약과 4시간 간격을 두세요.",
+    "recommended_action_doctor":  "반드시 제품 라벨을 확인하여 무요오드(Iodine-free) 제품을 고르거나 주치의와 상담하십시오. 칼슘/철분이 포함되어 있다면 갑상선 약과 4시간 간격을 두세요."
+  },
+  {
+    "rule_id": "omega3_anticoagulant",
+    "supplement_canonical": "omega3",
+    "trigger": {"medication_any": ["warfarin", "와파린", "apixaban", "rivaroxaban", "clopidogrel", "aspirin_high_dose"]},
+    "severity": "CAUTION",
+    "category": "anticoagulant_interaction",
+    "message_patient": "고용량 오메가3(>3g/일)는 항응고제와 병용 시 출혈 위험을 증가시킬 수 있습니다.",
+    "message_doctor":  "고용량 오메가3(>3g/일)는 항응고제와 병용 시 출혈 위험을 증가시킬 수 있습니다.",
+    "recommended_action_patient": "항응고제 처방의에게 오메가3 복용 사실을 알리고 용량을 협의하시기 바랍니다.",
+    "recommended_action_doctor":  "항응고제 처방의에게 오메가3 복용 사실을 알리고 용량을 협의하시기 바랍니다."
+  },
+  {
+    "rule_id": "ashwagandha_hyperthyroid",
+    "supplement_canonical": "ashwagandha",
+    "trigger": {"diagnosis_any": ["hyperthyroidism", "graves_disease", "active_hyperthyroidism", "autonomous_thyroid_nodule"]},
+    "severity": "CRITICAL",
+    "category": "herb_thyrotoxicosis",
+    "message_patient": "아슈와간다는 갑상선을 자극하는 효과가 있어 갑상선기능항진증 환자에서 증상을 악화시킬 수 있습니다.",
+    "message_doctor":  "아슈와간다는 갑상선을 자극하는 효과가 있어 갑상선기능항진증 환자에서 증상을 악화시킬 수 있습니다.",
+    "recommended_action_patient": "갑상선기능항진증/그레이브스병 환자에서 아슈와간다 복용을 중단하십시오.",
+    "recommended_action_doctor":  "갑상선기능항진증/그레이브스병 환자에서 아슈와간다 복용을 중단하십시오."
+  },
+  {
+    "rule_id": "ashwagandha_pregnancy",
+    "supplement_canonical": "ashwagandha",
+    "trigger": {"risk_factor_any": ["pregnancy", "pregnant", "임신"]},
+    "severity": "CRITICAL",
+    "category": "pregnancy_contraindicated",
+    "message_patient": "아슈와간다는 임신 중 자궁 수축 유발 가능성으로 금기입니다.",
+    "message_doctor":  "아슈와간다는 임신 중 자궁 수축 유발 가능성으로 금기입니다.",
+    "recommended_action_patient": "임신 중 아슈와간다 복용을 즉시 중단하고 산부인과 상담을 받으시기 바랍니다.",
+    "recommended_action_doctor":  "임신 중 아슈와간다 복용을 즉시 중단하고 산부인과 상담을 받으시기 바랍니다."
+  },
+  {
+    "rule_id": "vitamin_b12_default_info",
+    "supplement_canonical": "vitamin_b12",
+    "trigger": {},
+    "severity": "INFO",
+    "category": "limited_evidence",
+    "message_patient": "비타민 B12 과잉 보충은 일반적으로 독성이 낮으나, 검사 수치 확인 후 보충 여부를 결정하는 것이 권고됩니다.",
+    "message_doctor":  "비타민 B12 과잉 보충은 일반적으로 독성이 낮으나, 검사 수치 확인 후 보충 여부를 결정하는 것이 권고됩니다.",
+    "recommended_action_patient": "혈중 B12 수치 측정 후 결핍이 확인된 경우에만 보충을 권고합니다.",
+    "recommended_action_doctor":  "혈중 B12 수치 측정 후 결핍이 확인된 경우에만 보충을 권고합니다."
+  },
+  {
+    "rule_id": "biotin_lab_interference",
+    "supplement_canonical": "biotin",
+    "trigger": {},
+    "severity": "WARNING",
+    "category": "lab_interference",
+    "message_patient": "고용량 비오틴(5mg 이상/일)은 TSH·T4·T3 면역분석 검사 수치를 왜곡(위음성/위양성)시킬 수 있습니다. 검사 48~72시간 전 복용 중단을 권고합니다.",
+    "message_doctor":  "고용량 비오틴(5mg 이상/일)은 TSH·T4·T3 면역분석 검사 수치를 왜곡(위음성/위양성)시킬 수 있습니다. 검사 48~72시간 전 복용 중단을 권고합니다.",
+    "recommended_action_patient": "갑상선 기능 검사 48~72시간 전에 비오틴 복용을 반드시 중단하시기 바랍니다. (FDA 2017 경고)",
+    "recommended_action_doctor":  "갑상선 기능 검사 48~72시간 전에 비오틴 복용을 반드시 중단하시기 바랍니다. (FDA 2017 경고)"
+  },
+  {
+    "rule_id": "coq10_warfarin",
+    "supplement_canonical": "coq10",
+    "trigger": {"medication_keywords_any": ["warfarin", "와파린", "쿠마딘"]},
+    "severity": "WARNING",
+    "category": "anticoagulant_interaction",
+    "message_patient": "CoQ10은 와파린의 항응고 효과를 감소시킬 수 있습니다. INR 수치 모니터링이 필요합니다.",
+    "message_doctor":  "CoQ10은 와파린의 항응고 효과를 감소시킬 수 있습니다. INR 수치 모니터링이 필요합니다.",
+    "recommended_action_patient": "와파린 복용 중 CoQ10 추가 시 처방의에게 알리고 INR을 정기적으로 확인하시기 바랍니다.",
+    "recommended_action_doctor":  "와파린 복용 중 CoQ10 추가 시 처방의에게 알리고 INR을 정기적으로 확인하시기 바랍니다."
+  },
+  {
+    "rule_id": "milk_thistle_cyp450",
+    "supplement_canonical": "milk_thistle",
+    "trigger": {"medication_keywords_any": ["warfarin", "와파린", "statin", "스타틴", "cyclosporin", "tacrolimus"]},
+    "severity": "WARNING",
+    "category": "cyp450_interaction",
+    "message_patient": "밀크씨슬(실리마린)은 CYP3A4·CYP2C9 효소를 억제하여 일부 약물(와파린, 스타틴, 면역억제제 등)의 혈중 농도를 변화시킬 수 있습니다.",
+    "message_doctor":  "밀크씨슬(실리마린)은 CYP3A4·CYP2C9 효소를 억제하여 일부 약물(와파린, 스타틴, 면역억제제 등)의 혈중 농도를 변화시킬 수 있습니다.",
+    "recommended_action_patient": "처방 약물이 있는 경우 밀크씨슬 복용 전 처방의와 상담하시기 바랍니다.",
+    "recommended_action_doctor":  "처방 약물이 있는 경우 밀크씨슬 복용 전 처방의와 상담하시기 바랍니다."
+  },
+  {
+    "rule_id": "nac_anticoagulant",
+    "supplement_canonical": "nac",
+    "trigger": {"medication_keywords_any": ["warfarin", "와파린", "apixaban", "rivaroxaban"]},
+    "severity": "CAUTION",
+    "category": "anticoagulant_interaction",
+    "message_patient": "NAC(N-아세틸시스테인)은 항응고제와 병용 시 출혈 위험을 증가시킬 수 있습니다.",
+    "message_doctor":  "NAC(N-아세틸시스테인)은 항응고제와 병용 시 출혈 위험을 증가시킬 수 있습니다.",
+    "recommended_action_patient": "항응고제 복용 중 NAC 추가 시 처방의에게 알리시기 바랍니다.",
+    "recommended_action_doctor":  "항응고제 복용 중 NAC 추가 시 처방의에게 알리시기 바랍니다."
+  },
+  {
+    "rule_id": "magnesium_zinc_antibiotic_absorption",
+    "trigger": {
+      "supplement_canonical_any": ["magnesium", "zinc"],
+      "medication_keywords_any": ["quinolone", "퀴놀론", "ciprofloxacin", "시프로", "levofloxacin", "레보플록사신", "tetracycline", "테트라사이클린", "doxycycline", "독시사이클린", "minocycline"]
+    },
+    "severity": "WARNING",
+    "category": "antibiotic_absorption",
+    "message_template_patient": "{supplement_ko}은 퀴놀론계·테트라사이클린 항생제의 흡수를 방해할 수 있습니다. 항생제 복용과 최소 2시간 간격을 두어야 합니다.",
+    "message_template_doctor":  "{supplement_ko}은 퀴놀론계·테트라사이클린 항생제의 흡수를 방해할 수 있습니다. 항생제 복용과 최소 2시간 간격을 두어야 합니다.",
+    "action_template_patient": "항생제 복용 전후 2시간 이상 간격을 두고 {supplement_ko}을 복용하시기 바랍니다.",
+    "action_template_doctor":  "항생제 복용 전후 2시간 이상 간격을 두고 {supplement_ko}을 복용하시기 바랍니다.",
+    "supplement_ko_map": {"magnesium": "마그네슘", "zinc": "아연"}
+  },
+  {
+    "rule_id": "vitamin_d_thiazide",
+    "supplement_canonical": "vitamin_d",
+    "trigger": {"medication_keywords_any": ["thiazide", "티아지드", "hydrochlorothiazide", "hctz", "chlorthalidone", "indapamide", "인다파미드"]},
+    "severity": "WARNING",
+    "category": "hypercalcemia_risk",
+    "message_patient": "티아지드계 이뇨제와 고용량 비타민D 병용 시 고칼슘혈증(혈중 칼슘 과잉) 위험이 증가할 수 있습니다.",
+    "message_doctor":  "티아지드계 이뇨제와 고용량 비타민D 병용 시 고칼슘혈증(혈중 칼슘 과잉) 위험이 증가할 수 있습니다.",
+    "recommended_action_patient": "혈중 칼슘 수치를 정기적으로 모니터링하고 처방의와 용량을 협의하시기 바랍니다.",
+    "recommended_action_doctor":  "혈중 칼슘 수치를 정기적으로 모니터링하고 처방의와 용량을 협의하시기 바랍니다."
+  },
+  {
+    "rule_id": "selenium_warfarin",
+    "supplement_canonical": "selenium",
+    "trigger": {"medication_keywords_any": ["warfarin", "와파린"]},
+    "severity": "CAUTION",
+    "category": "anticoagulant_interaction",
+    "message_patient": "셀레늄은 와파린의 항응고 효과를 강화시킬 수 있습니다. 출혈 위험 증가 가능성이 있습니다.",
+    "message_doctor":  "셀레늄은 와파린의 항응고 효과를 강화시킬 수 있습니다. 출혈 위험 증가 가능성이 있습니다.",
+    "recommended_action_patient": "와파린 복용 중 셀레늄 추가 시 INR 모니터링을 강화하시기 바랍니다.",
+    "recommended_action_doctor":  "와파린 복용 중 셀레늄 추가 시 INR 모니터링을 강화하시기 바랍니다."
+  },
+  {
+    "rule_id": "pregnancy_tsh_elevated_warning",
+    "trigger": {
+      "risk_factor_any": ["pregnancy", "pregnant", "임신"],
+      "lab_gt": {"TSH": 4.0}
+    },
+    "severity": "WARNING",
+    "category": "pregnancy_tsh_elevated",
+    "message_template_patient": "임신 중 TSH {lab.TSH} mIU/L — 임신부 정상 범위(상한 약 4.0 mIU/L)를 초과한 수치입니다. 영양제 복용 여부보다 임신성 갑상선기능저하 평가가 우선입니다. (ATA 2017 R26)",
+    "message_template_doctor":  "임신 중 TSH {lab.TSH} mIU/L — 임신 trimester-specific upper limit 4.0 mIU/L 초과. ATA 2017 R26 권고에 따라 임신성 갑상선기능저하/아임상 평가가 우선되어야 하며, 영양제 평가는 그 이후 진행을 권고합니다. [PMID:28056690]",
+    "recommended_action_patient": "산부인과·내분비내과 진료를 우선 받고 TSH 재검과 LT4 시작 여부를 평가받으시기 바랍니다.",
+    "recommended_action_doctor":  "ATA 2017 R26: 임신부 TSH > 4.0 mIU/L 시 levothyroxine 치료 권고. 산부인과·내분비내과 진료 연계 후 영양제 평가를 진행하시기 바랍니다."
+  },
+  {
+    "rule_id": "pregnancy_tpoab_positive_selenium_caution",
+    "supplement_canonical": "selenium",
+    "trigger": {
+      "risk_factor_any": ["pregnancy", "pregnant", "임신"],
+      "lab_gt": {"TPOAb": 0}
+    },
+    "severity": "CAUTION",
+    "category": "pregnancy_tpoab_selenium",
+    "message_patient": "임신 중 TPOAb 양성인 경우에도 셀레늄 보충은 산후 갑상선염 예방 효과가 충분히 입증되지 않아 일상적으로 권장되지 않습니다. (ATA 2017 R12)",
+    "message_doctor":  "ATA 2017 R12: 임신 중 TPOAb 양성 산모에 대한 셀레늄 보충은 권장되지 않음 (Weak recommendation, Moderate quality). 산후 갑상선염(PPT) 예방 효과 미확인. [PMID:28056690]",
+    "recommended_action_patient": "셀레늄 추가 복용 전 담당의와 상담하시기 바랍니다.",
+    "recommended_action_doctor":  "TPOAb 양성 임신부에 일상적 selenium 보충은 권하지 않습니다. 필요 시 R92 PPT 예방 비효과 근거 참조."
+  },
+  {
+    "rule_id": "pregnancy_iodine_excess_info",
+    "supplement_canonical": "iodine",
+    "trigger": {"risk_factor_any": ["pregnancy", "pregnant", "임신"]},
+    "severity": "INFO",
+    "category": "pregnancy_iodine_excess",
+    "message_patient": "임신 중 요오드는 하루 약 250µg 권장이며, 보충제와 식이 합계가 500µg을 초과하지 않도록 주의가 필요합니다. (ATA 2017 R10)",
+    "message_doctor":  "ATA 2017 R10: 임신 중 요오드 일일 총섭취량 500µg 초과 시 태아 갑상선기능저하 위험. 보충제·산전비타민·식이 합계 점검 필요. [PMID:28056690]",
+    "recommended_action_patient": "산전비타민·해조류 섭취량을 함께 점검하시고, 담당의와 적정 용량을 확인하시기 바랍니다.",
+    "recommended_action_doctor":  "ATA 2017 R10: 임신부 요오드 일일 총섭취량 500µg 미만 유지. 산전비타민 라벨 및 해조류 섭취 빈도 확인 권고."
+  },
+  {
+    "rule_id": "lactation_iodine_excess_info",
+    "supplement_canonical": "iodine",
+    "trigger": {"risk_factor_any": ["lactation", "breastfeeding", "수유"]},
+    "severity": "INFO",
+    "category": "lactation_iodine_excess",
+    "message_patient": "수유 중 요오드는 하루 약 250µg 권장이며, 보충제와 식이 합계가 500µg을 초과하지 않도록 주의가 필요합니다. (ATA 2017 R84)",
+    "message_doctor":  "ATA 2017 R84: 수유부 요오드 일일 총섭취량 500µg 초과 시 영아 갑상선기능저하 위험. 모유로 이행됨. [PMID:28056690]",
+    "recommended_action_patient": "모유 수유 중 산전비타민·해조류 섭취량을 함께 점검하시고, 담당의와 적정 용량을 확인하시기 바랍니다.",
+    "recommended_action_doctor":  "ATA 2017 R84: 수유부 요오드 일일 총섭취량 500µg 미만 유지. 보충제·산전비타민·해조류 누적 확인 권고."
+  },
+  {
+    "rule_id": "pregnancy_lt4_dose_adjustment_info",
+    "trigger": {
+      "risk_factor_any": ["pregnancy", "pregnant", "임신"],
+      "medication_keywords_any": ["levothyroxine", "레보티록신", "씬지로이드", "신지로이드", "씬지", "levothroid", "synthroid"]
+    },
+    "severity": "INFO",
+    "category": "pregnancy_lt4_adjustment",
+    "message_patient": "임신 중에는 레보티록신 용량이 임신 전 대비 약 20~30% 증량이 필요할 수 있고, TSH도 더 자주(약 4주마다) 모니터링하는 것이 일반적입니다. (ATA 2017 R36)",
+    "message_doctor":  "ATA 2017 R36: 임신 확인 즉시 levothyroxine 20~30% 증량 + TSH 4주 간격 모니터링 권고. 영양제 평가 시 LT4 흡수 간섭 (Fe/Ca/Mg/Zn 최소 4시간 간격 권장) 함께 확인 필요. [PMID:28056690]",
+    "recommended_action_patient": "임신을 확인하시면 갑상선 담당의에게 즉시 알리고 용량·검사 일정 조정을 받으시기 바랍니다.",
+    "recommended_action_doctor":  "ATA 2017 R36: 임신 확인 즉시 LT4 용량 +20~30%, TSH 4주 간격 재검. 미네랄 보충제 처방 시 LT4 4시간 간격 안내."
+  }
+]
