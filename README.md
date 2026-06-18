@@ -8,7 +8,7 @@ LLM(GPT-4o-mini)은 **판정 이후 자연어 설명 생성에만** 사용하는
 
 [![CI](https://github.com/tunho/thyroid-supplement-cdss/actions/workflows/ci.yml/badge.svg)](https://github.com/tunho/thyroid-supplement-cdss/actions/workflows/ci.yml)
 
-- **배포 URL**: https://thyroid-supplement-cdss.onrender.com  *(Render 배포 후 확정)*
+- **배포 URL**: https://thyroid-supplement-cdss.onrender.com  *(무료 티어: 유휴 시 슬립, 첫 접속 시 ~30–60초 콜드스타트)*
 - **API 문서**: `<배포 URL>/docs` (Swagger UI)
 
 ---

@@ -17,7 +17,7 @@
 - **Front-End 구성 및 링크**: 정적 웹(HTML/CSS/JS), 배포 URL의 `/` 경로 — `frontend/` (환자/의사 상담 UI, 예시 시나리오, 로그인)
 - **Back-End 구성 및 링크**: FastAPI(Python 3.12) — `app/`. 주요 API: `POST /api/v1/patient/thyroid-chat`, `POST /api/v1/doctor/thyroid-consult`, `POST /api/auth/login`. Swagger 문서: `<배포 URL>/docs`
 - **Database 구성 설명**: SQLite 사용 — ① 인증/사용자 프로필(`domain/auth/patients.db`, 서버 기동 시 계정 자동 시드), ② 식약처 원료 캐시(`domain/mfds/db.py`, 미존재 시 빈 DB 자동 생성 + 내장 fallback 테이블). 판정 감사 로그는 JSONL(`data/audit/`).
-- **배포 URL**: https://thyroid-supplement-cdss.onrender.com  *(Render 배포 완료 후 최종 URL 기입)*
+- **배포 URL**: https://thyroid-supplement-cdss.onrender.com  *(무료 티어 — 유휴 시 슬립, 첫 접속 시 ~30–60초 콜드스타트 후 정상 동작)*
 - **CI/CD 구성 설명**: **CI** = GitHub Actions(`.github/workflows/ci.yml`) — push/PR마다 규칙 로직 테스트(pytest) + 앱 import 스모크 테스트 실행. **CD** = Render Blueprint(`render.yaml`, `autoDeploy: true`) — `main` 브랜치 push 시 Docker 이미지 자동 빌드·재배포.
 - **GitHub Repository 링크**: https://github.com/tunho/thyroid-supplement-cdss
 
