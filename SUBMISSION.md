@@ -15,10 +15,10 @@
 ## [필수 구성 요소]
 
 - **Front-End 구성 및 링크**: 정적 웹(HTML/CSS/JS), 배포 URL의 `/` 경로 — `frontend/` (환자/의사 상담 UI, 예시 시나리오, 로그인)
-- **Back-End 구성 및 링크**: FastAPI(Python 3.12) — `app/`. 주요 API: `POST /api/v1/patient/thyroid-chat`, `POST /api/v1/doctor/thyroid-consult`, `POST /api/auth/login`. Swagger 문서: `<배포 URL>/docs`
+- **Back-End 구성 및 링크**: FastAPI(Python 3.12) — `app/`. 주요 API: `POST /api/v1/patient/thyroid-chat`, `POST /api/v1/doctor/thyroid-consult`, `POST /api/auth/login`. Swagger 문서: https://thyroid-supplement-cdss.onrender.com/docs
 - **Database 구성 설명**: SQLite 사용 — ① 인증/사용자 프로필(`domain/auth/patients.db`, 서버 기동 시 계정 자동 시드), ② 식약처 원료 캐시(`domain/mfds/db.py`, 미존재 시 빈 DB 자동 생성 + 내장 fallback 테이블). 판정 감사 로그는 JSONL(`data/audit/`).
 - **배포 URL**: https://thyroid-supplement-cdss.onrender.com  *(무료 티어 — 유휴 시 슬립, 첫 접속 시 ~30–60초 콜드스타트 후 정상 동작)*
-- **CI/CD 구성 설명**: **CI** = GitHub Actions(`.github/workflows/ci.yml`) — push/PR마다 규칙 로직 테스트(pytest) + 앱 import 스모크 테스트 실행. **CD** = Render Blueprint(`render.yaml`, `autoDeploy: true`) — `main` 브랜치 push 시 Docker 이미지 자동 빌드·재배포.
+- **CI/CD 구성 설명**: **CI** = GitHub Actions(`.github/workflows/ci.yml`) — push/PR마다 규칙 로직 테스트(pytest 91건) + 앱 부팅·라우트 노출 스모크 테스트 실행. **CD** = Render Web Service(Docker, `render.yaml`/`autoDeploy: true`) — `main` 브랜치 push 시 Docker 이미지 자동 빌드·재배포.
 - **GitHub Repository 링크**: https://github.com/tunho/thyroid-supplement-cdss
 
 ## [기술 및 구현 내용]
@@ -36,7 +36,7 @@
 - **실행 방법 또는 확인 방법**:
   - 배포본: 배포 URL 접속 → 환자/의사 탭 로그인(공통 비밀번호 `demo1234`, 계정은 TEST_ACCOUNTS.md) → 상담 입력
   - 로컬: `docker build -t thyroid-cdss . && docker run -p 8000:8000 -e OPENAI_API_KEY=sk-... thyroid-cdss` → http://localhost:8000
-  - 헬스체크: `<배포 URL>/health`
+  - 헬스체크: https://thyroid-supplement-cdss.onrender.com/health
   - 테스트: `PYTHONPATH=. pytest tests/test_thyroid_decision.py tests/test_thyroid_safety.py -v`
 
 ## [면담/코드리뷰]
